@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { headerRoutes } from "../constants";
 import { Link } from "react-router-dom";
 import { LoginRegisterButton } from "./";
+import { fadeIn } from "../utils/motion";
 
 const Header = () => {
   return (
@@ -20,7 +21,9 @@ const Header = () => {
         <ul>
           {headerRoutes.map((route, index) => (
             <Link to={route.path} key={index}>
-              <motion.li>{route.name}</motion.li>
+              <motion.li variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+                {route.name}
+              </motion.li>
             </Link>
           ))}
         </ul>
