@@ -4,7 +4,7 @@ import { Contact, Features, GetStarted, Header, Hero } from "../components";
 function LandingPage() {
   const heroVariant = {
     hidden: { opacity: 0, y: "-100%" },
-    show: { opacity: 1, y: "0%" },
+    show: { opacity: 1, y: "0%", trasnsition: "" },
   };
   const buttonVariant = { hover: { scale: 1.1 } };
 
