@@ -1,0 +1,50 @@
+@import "./constants";
+@import "./variables";
+
+.landing__features {
+  @include flexDirection(column);
+  gap: 2rem;
+  padding: 5rem 10%;
+
+  .text__features {
+    width: 100%;
+    h2 {
+      font-size: 5rem;
+    }
+    p {
+      font-size: 1.75rem;
+      color: $p-neutral;
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    .feature {
+      background: red;
+      padding: 1rem;
+      /* Font & Text */
+      font-family: sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+      letter-spacing: normal;
+      line-height: normal;
+      text-decoration: none solid rgb(0, 0, 0);
+      text-align: start;
+      text-indent: 0px;
+      text-transform: none;
+      vertical-align: baseline;
+      white-space: normal;
+      word-spacing: 0px;
+
+      border-radius: 24px;
+    }
+  }
+}

@@ -1,22 +1,53 @@
+import { useInView } from "react-intersection-observer";
+import { features } from "../constants";
+import "../styles/features.scss";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { textVariant } from "../utils/motion";
+import { fadeIn } from "../utils/motion";
+
 const Features = () => {
+  const { ref, inView } = useInView();
+  const control = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("show");
+    } else {
+      control.start("hidden");
+    }
+  }, [inView, control]);
+
   return (
-    <section id="features">
-      <h2>Features</h2>
+    <section id="features" className="landing__features">
+      <motion.div
+        variants={textVariant(0)}
+        ref={ref}
+        initial="hidden"
+        animate={control}
+        className="text__features"
+      >
+        <h2>Features</h2>
+        <p>
+          Discover all the tools you need to create stunning animations with
+          ease.
+        </p>
+      </motion.div>
       <ul>
-        <li>Create and edit animations visually with just a few clicks</li>
-        <li>
-          Experiment with Framer Motion animations and transitions in an
-          easy-to-use interface
-        </li>
-        <li>
-          A wide variety of pre-built templates and animations to help you get
-          started quickly
-        </li>
-        <li>Collaborate with other developers to combine and refine ideas</li>
-        <li>
-          Export your creations in one click and use them in your Framer Motion
-          or React projects
-        </li>
+        {features.map((feature, index) => (
+          <motion.div
+            ref={ref}
+            variants={fadeIn("right", "tween", index * 0.1, 0.3)}
+            className="feature"
+            initial="hidden"
+            animate={control}
+          >
+            <div className="div">
+              <feature.icon />
+            </div>
+            <p> {feature.text}</p>
+          </motion.div>
+        ))}
       </ul>
     </section>
   );
