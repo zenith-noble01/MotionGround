@@ -4,8 +4,6 @@ import { Contact, Features, Header, Hero, GetStarted } from "../components";
 function LandingPage() {
   let currentYear = new Date().getFullYear();
 
-  console.log(currentYear);
-
   return (
     <div className="landing-page">
       <Header />

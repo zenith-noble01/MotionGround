@@ -1,5 +1,7 @@
 import "../styles/header.scss";
 import { motion } from "framer-motion";
+import { headerRoutes } from "../constants";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -15,19 +17,17 @@ const Header = () => {
           MotionCanvas
         </motion.a>
         <ul>
-          <li>
-            <a href="#features">Features</a>
-          </li>
-          <li>
-            <a href="#templates">Templates</a>
-          </li>
-          <li>
-            <a href="#get-started">Get Started</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+          {headerRoutes.map((route, index) => {
+            <Link to={route.path} key={index}>
+              <motion.a>{route.name}</motion.a>
+            </Link>;
+          })}
         </ul>
+
+        <div className="cta__btns">
+          <Link to="/login">Sign In</Link>
+          <Link to="/signup">Sign Up</Link>
+        </div>
       </nav>
     </header>
   );
