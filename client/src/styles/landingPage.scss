@@ -1,38 +1,5 @@
 @import "./variables";
 
-header {
-  background-color: $darkest;
-  padding: 2em;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: $lighter;
-  }
-  ul {
-    display: flex;
-    li {
-      margin-left: 2em;
-    }
-    a {
-      font-weight: bold;
-      color: $lighter;
-      &:hover {
-        color: $light;
-      }
-    }
-  }
-}
-
 main {
   margin-top: 7em;
   h2 {

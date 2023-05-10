@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <header>
+    <header className="landing__header">
       <nav>
         <motion.a
           href="#home"
