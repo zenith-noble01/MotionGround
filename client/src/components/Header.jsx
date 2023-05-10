@@ -21,7 +21,11 @@ const Header = () => {
         <ul>
           {headerRoutes.map((route, index) => (
             <Link to={route.path} key={index}>
-              <motion.li variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+              <motion.li
+                variants={fadeIn("down", "tween", index * 0.05, 0.5)}
+                initial="hidden"
+                animate="show"
+              >
                 {route.name}
               </motion.li>
             </Link>
