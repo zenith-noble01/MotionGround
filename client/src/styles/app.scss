@@ -7,12 +7,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
 }
 
 body {
   font-size: 16px;
   background-color: $light; /* or any other color of your choice */
+  font-family: "GT Walsheim", sans-serif;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
