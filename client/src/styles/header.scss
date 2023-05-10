@@ -46,7 +46,7 @@
       padding: 14px 16px;
       color: black;
       font-weight: bold;
-      transition: $trans;
+      transition: all $trans;
       border-radius: 12px;
       &.active {
         @include gradientShadow;

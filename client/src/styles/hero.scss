@@ -1,0 +1,38 @@
+@import "./variables";
+@import "./constants";
+
+.landing__hero {
+  height: 100vh;
+  padding-top: 5rem;
+  @include flexCenter;
+  @include flexDirection(column);
+  gap: 1rem;
+
+  h1 {
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  p {
+    color: $p-neutral;
+    text-align: center;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    a {
+      @include gradientShadow;
+      @include Gradient;
+      color: $primary-color;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-family: $gt;
+      transition: $trans;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}

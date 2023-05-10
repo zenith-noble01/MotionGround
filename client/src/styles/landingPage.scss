@@ -1,7 +1,6 @@
 @import "./variables";
 
 main {
-  margin-top: 7em;
   h2 {
     margin: 2em 0 1em;
     font-size: 28px;
@@ -22,7 +21,7 @@ main {
   section {
     padding: 5em 2em;
     min-height: calc(100vh - 7em);
-    background-color: white;
+    background-color: rgb(233, 45, 45);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,16 +47,7 @@ main {
     }
   }
   .cta-btn {
-    padding: 1em 2em;
-    background-color: white;
-    border: none;
-    border-radius: 30px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease-out;
+    transition: all $trans;
     &:hover {
       background-color: white;
       transform: translateY(-4px);
