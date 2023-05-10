@@ -1,3 +1,25 @@
 @mixin boxshadow {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 50px;
 }
+
+@mixin gradientShadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 50px;
+  box-shadow: rgba(135, 93, 255, 0.584) 0.398096px 0.398096px 0.562993px -0.9375px,
+    rgba(135, 93, 255, 0.553) 1.20725px 1.20725px 1.70731px -1.875px,
+    rgba(135, 93, 255, 0.47) 3.19133px 3.19133px 4.51322px -2.8125px,
+    rgba(135, 93, 255, 0.2) 10px 10px 14.1421px -3.75px;
+  border-radius: 12px;
+}
+
+@mixin Gradient {
+  background-attachment: scroll;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(
+    102deg,
+    rgb(0, 153, 255) 0%,
+    rgb(204, 0, 255) 100%
+  );
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  color: rgb(0, 0, 238);
+}

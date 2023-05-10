@@ -6,3 +6,5 @@ export const heroVariant = {
 };
 
 export const buttonVariant = { hover: { scale: 1.1 } };
+
+// export  const hoverBg = {hover: {ba}}

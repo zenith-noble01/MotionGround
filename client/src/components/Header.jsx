@@ -2,6 +2,7 @@ import "../styles/header.scss";
 import { motion } from "framer-motion";
 import { headerRoutes } from "../constants";
 import { Link } from "react-router-dom";
+import { LoginRegisterButton } from "./";
 
 const Header = () => {
   return (
@@ -17,16 +18,15 @@ const Header = () => {
           MotionCanvas
         </motion.a>
         <ul>
-          {headerRoutes.map((route, index) => {
+          {headerRoutes.map((route, index) => (
             <Link to={route.path} key={index}>
-              <motion.a>{route.name}</motion.a>
-            </Link>;
-          })}
+              <motion.li>{route.name}</motion.li>
+            </Link>
+          ))}
         </ul>
 
         <div className="cta__btns">
-          <Link to="/login">Sign In</Link>
-          <Link to="/signup">Sign Up</Link>
+          <LoginRegisterButton />
         </div>
       </nav>
     </header>
