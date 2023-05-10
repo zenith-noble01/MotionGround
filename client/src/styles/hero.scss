@@ -11,6 +11,7 @@
   h1 {
     font-size: 5rem;
     text-align: center;
+    color: $darkest;
   }
 
   p {
@@ -29,6 +30,7 @@
       padding: 14px 16px;
       font-family: $gt;
       transition: $trans;
+      font-weight: bold;
 
       &:hover {
         opacity: 0.5;

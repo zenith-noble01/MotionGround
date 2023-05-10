@@ -6,12 +6,7 @@ main {
     line-height: 1.5;
     color: $dark;
   }
-  ul {
-    margin-left: 2em;
-    li {
-      color: $dark;
-    }
-  }
+
   section {
     padding: 5em 2em;
     min-height: calc(100vh - 7em);

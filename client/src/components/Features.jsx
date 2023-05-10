@@ -27,7 +27,7 @@ const Features = () => {
         animate={control}
         className="text__features"
       >
-        <h2>Features</h2>
+        <h2>Features.</h2>
         <p>
           Discover all the tools you need to create stunning animations with
           ease.
@@ -42,7 +42,7 @@ const Features = () => {
             initial="hidden"
             animate={control}
           >
-            <div className="div">
+            <div className="feature__icon">
               <feature.icon />
             </div>
             <p> {feature.text}</p>
