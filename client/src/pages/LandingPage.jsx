@@ -117,7 +117,7 @@ function LandingPage() {
           <h2>Contact Us</h2>
           <p>
             Get in touch with our team and let us know what features you would
-            like to see or what problems you're running into.
+            like to see or what problems you&apos;re running into.
           </p>
           <form>
             <input type="text" placeholder="Name" />
