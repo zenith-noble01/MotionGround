@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { buttonVariant } from "../utils/motion";
 
-const GetStarted = ({ buttonVariant }) => {
+const GetStarted = () => {
   return (
     <section id="get-started">
       <h2>Get Started</h2>

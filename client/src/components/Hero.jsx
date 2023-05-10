@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { buttonVariant, heroVariant } from "../utils/motion";
 
-const Hero = ({ heroVariant, buttonVariant }) => {
+const Hero = () => {
   return (
     <motion.section
       className="hero"

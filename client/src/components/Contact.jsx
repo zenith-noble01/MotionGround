@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { buttonVariant } from "../utils/motion";
 
-const Contact = ({ buttonVariant }) => {
+const Contact = () => {
   return (
     <section id="contact">
       <h2>Contact Us</h2>
