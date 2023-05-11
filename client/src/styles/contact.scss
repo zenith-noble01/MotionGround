@@ -1,0 +1,10 @@
+@import "./constants";
+@import "./variables";
+
+.landing__contact {
+  padding: 5rem 10%;
+
+  .contact__container {
+    @include textContainer($p-neutral);
+  }
+}

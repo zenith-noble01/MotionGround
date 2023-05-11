@@ -1,27 +1,46 @@
-import { motion } from "framer-motion";
-import { buttonVariant } from "../utils/motion";
+import { motion, useAnimation } from "framer-motion";
+import { buttonVariant, slideIn } from "../utils/motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import "../styles/contact.scss";
 
 const Contact = () => {
+  const { ref, inView } = useInView();
+  const control = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("show");
+    } else {
+      control.start("hidden");
+    }
+  }, [inView, control]);
+
   return (
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>
-        Get in touch with our team and let us know what features you would like
-        to see or what problems you&apos;re running into.
-      </p>
-      <form>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <textarea placeholder="Message" />
-        <motion.button
-          variants={buttonVariant}
-          whileHover="hover"
-          type="submit"
+    <motion.div id="contact" className="landing__contact">
+      <div className="contact__container">
+        <motion.div
+          variants={slideIn("left", "tween", 0.2, 0.5)}
+          ref={ref}
+          initial="hidden"
+          animate={control}
+          className="text__container"
         >
-          Send
-        </motion.button>
-      </form>
-    </section>
+          <h2>Contribute Today</h2>
+          <p>
+            Are you a developer wanting to take this project to next level?
+            Contribute on the <br />
+            <a
+              href="https://github.com/zenith-noble01/motioncanvas"
+              rel="norefere"
+              target="_black"
+            >
+              Github repo Here.
+            </a>
+          </p>
+        </motion.div>
+      </div>
+    </motion.div>
   );
 };
 

@@ -38,7 +38,7 @@ const Features = () => {
         {features.map((feature, index) => (
           <motion.div
             ref={ref}
-            variants={fadeIn("right", "tween", index * 0.1, 0.3)}
+            variants={fadeIn("rigth", "tween", index * 0.1, 0.3)}
             className={`feature feature${index}`}
             initial="hidden"
             animate={control}
