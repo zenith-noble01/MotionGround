@@ -2,7 +2,7 @@ import "../styles/landingPage.scss";
 import { Contact, Features, Header, Hero, GetStarted } from "../components";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { textVariant } from "../utils/motion";
 
 function LandingPage() {
@@ -11,6 +11,17 @@ function LandingPage() {
   const control = useAnimation();
 
   const { ref, inView } = useInView();
+
+  const [changeColor, setChangeColor] = useState(false);
+
+  function changeNavBgColor() {
+    if (window.scrollY >= 70) {
+      setChangeColor(true);
+    } else {
+      setChangeColor(false);
+    }
+  }
+  window.addEventListener("scroll", changeNavBgColor);
 
   useEffect(() => {
     if (inView) {
@@ -51,7 +62,11 @@ function LandingPage() {
       </motion.footer>
 
       <a href="#home">
-        <div className="wheel__container">
+        <div
+          className={`${
+            changeColor ? "wheel__container active" : "wheel__container"
+          }`}
+        >
           <motion.div
             animate={{
               y: [0, 24, 0],
