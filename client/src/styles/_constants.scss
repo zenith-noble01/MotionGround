@@ -43,3 +43,17 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@mixin textContainer($color) {
+  .text__container {
+    width: 100%;
+    h2 {
+      font-size: 5rem;
+    }
+
+    p {
+      font-size: 1.75rem;
+      color: $color;
+    }
+  }
+}

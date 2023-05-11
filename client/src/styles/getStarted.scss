@@ -1,0 +1,42 @@
+@import "./constants";
+@import "./variables";
+
+.landing__getStarted {
+  padding: 5rem 10%;
+
+  .getStarted__container {
+    @include Gradient;
+    @include gradientShadow;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 20px;
+
+    @include textContainer($neutral-color);
+
+    h2 {
+      color: $primary-color;
+    }
+
+    button {
+      border: none;
+      a {
+        background: $primary-color;
+        border: none;
+        padding: 12px 16px;
+        color: $darkest;
+        font-weight: bold;
+        font-family: $gt;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all $trans;
+
+        &:hover {
+          @include boxshadow;
+          background-color: $darkest;
+          color: $primary-color;
+          // transform: ;
+        }
+      }
+    }
+  }
+}

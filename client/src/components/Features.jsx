@@ -5,12 +5,11 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { textVariant } from "../utils/motion";
 import { fadeIn } from "../utils/motion";
+// import { Link } from "react-router-dom";
 
 const Features = () => {
   const { ref, inView } = useInView();
   const control = useAnimation();
-
-  
 
   useEffect(() => {
     if (inView) {
@@ -27,7 +26,7 @@ const Features = () => {
         ref={ref}
         initial="hidden"
         animate={control}
-        className="text__features"
+        className="text__container"
       >
         <h2>Features.</h2>
         <p>
@@ -40,9 +39,10 @@ const Features = () => {
           <motion.div
             ref={ref}
             variants={fadeIn("right", "tween", index * 0.1, 0.3)}
-            className="feature"
+            className={`feature feature${index}`}
             initial="hidden"
             animate={control}
+            key={index}
           >
             <div className="feature__icon">
               <feature.icon />
