@@ -10,6 +10,8 @@ const Features = () => {
   const { ref, inView } = useInView();
   const control = useAnimation();
 
+  
+
   useEffect(() => {
     if (inView) {
       control.start("show");
