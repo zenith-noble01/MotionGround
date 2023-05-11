@@ -6,5 +6,9 @@
 
   .contact__container {
     @include textContainer($p-neutral);
+
+    a {
+      text-decoration: underline;
+    }
   }
 }
