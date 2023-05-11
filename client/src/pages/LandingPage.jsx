@@ -21,7 +21,7 @@ function LandingPage() {
   }, [control, inView]);
 
   return (
-    <div className="landing-page">
+    <div className="app__landing">
       <Header />
       <main>
         <Hero />
@@ -49,6 +49,22 @@ function LandingPage() {
           </a>
         </span>
       </motion.footer>
+
+      <a href="#home">
+        <div className="wheel__container">
+          <motion.div
+            animate={{
+              y: [0, 24, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+            className="wheel"
+          />
+        </div>
+      </a>
     </div>
   );
 }
