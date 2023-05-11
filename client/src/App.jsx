@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { LandingPage } from "./pages";
+import { Loading } from "./components";
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
         <Route
           path="/"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loading />}>
               <LandingPage />
             </Suspense>
           }
