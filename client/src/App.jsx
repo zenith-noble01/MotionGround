@@ -2,7 +2,7 @@ import "./styles/app.scss";
 import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import { LandingPage } from "./pages";
+import { LandingPage, Login, Register } from "./pages";
 import { Loading } from "./components";
 
 const App = () => {
@@ -14,6 +14,22 @@ const App = () => {
           element={
             <Suspense fallback={<Loading />}>
               <LandingPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <Suspense fallback={<Loading />}>
+              <Register />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <Suspense fallback={<Loading />}>
+              <Login />
             </Suspense>
           }
         />
