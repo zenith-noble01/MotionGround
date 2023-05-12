@@ -89,11 +89,37 @@
             &::placeholder {
               font-family: $gt;
             }
+
+            &:focus {
+              border: 1px solid $secondary-color;
+            }
+
+            &:checked {
+              background-color: red;
+              accent-color: red;
+            }
           }
         }
 
         button {
           width: 100%;
+        }
+      }
+
+      .verify__container {
+        @include flexDirection(column);
+        gap: 1rem;
+        margin-top: 1rem;
+
+        label {
+          @include flexAlign;
+          gap: 0.5rem;
+          color: $p-neutral;
+          font-size: 14px;
+
+          a {
+            color: $secondary-color;
+          }
         }
       }
     }

@@ -54,7 +54,7 @@ const Register = () => {
             </form>
             <div className="verify__container">
               <label htmlFor="terms">
-                <input type="checkbox" id="terms" />I agree to{" "}
+                <input type="checkbox" id="terms" /> I agree to{" "}
                 <Link to="/terms">Terms of Sevice</Link> and{" "}
                 <Link to="/privacy">Privacy Stament</Link>
               </label>
