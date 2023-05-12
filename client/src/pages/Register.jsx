@@ -5,14 +5,15 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   const [data, setData] = useState({
-    username: "",
+    firtName: "",
+    lastName: "",
     email: "",
     password: "",
   });
 
   const [isClicked, setIsClicked] = useState(false);
 
-  const { username, email, password } = data;
+  const { firtName, lastName, email, password } = data;
 
   const handleOnChange = (e) => {
     setData((prev) => ({
@@ -21,7 +22,9 @@ const Register = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="app__auth login">
@@ -41,17 +44,41 @@ const Register = () => {
             <form onSubmit={handleSubmit}>
               <div className="inputs">
                 <div className="input__container">
-                  <input type="text" placeholder="First Name" />
+                  <input
+                    name="firtName"
+                    value={firtName}
+                    onChange={handleOnChange}
+                    type="text"
+                    placeholder="First Name"
+                  />
                 </div>
                 <div className="input__container">
-                  <input type="text" placeholder="Last Name" />
+                  <input
+                    name="lastName"
+                    value={lastName}
+                    onChange={handleOnChange}
+                    type="text"
+                    placeholder="Last Name"
+                  />
                 </div>
               </div>
               <div className="input__container">
-                <input type="email" placeholder="Email" />
+                <input
+                  name="email"
+                  value={email}
+                  onChange={handleOnChange}
+                  type="email"
+                  placeholder="Email"
+                />
               </div>
               <div className="input__container">
-                <input type="password" placeholder="Password" />
+                <input
+                  name="password"
+                  value={password}
+                  onChange={handleOnChange}
+                  type="password"
+                  placeholder="Password"
+                />
               </div>
 
               <button className="email__continue">Continue with email</button>

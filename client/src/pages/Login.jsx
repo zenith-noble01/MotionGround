@@ -5,14 +5,13 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   const [data, setData] = useState({
-    username: "",
     email: "",
     password: "",
   });
 
   const [isClicked, setIsClicked] = useState(false);
 
-  const { username, email, password } = data;
+  const { email, password } = data;
 
   const handleOnChange = (e) => {
     setData((prev) => ({
@@ -21,7 +20,11 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log(data);
+  };
 
   return (
     <div className="app__auth login">
@@ -40,10 +43,22 @@ const Login = () => {
             </button>
             <form onSubmit={handleSubmit}>
               <div className="input__container">
-                <input type="email" placeholder="Email" />
+                <input
+                  onChange={handleOnChange}
+                  value={email}
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                />
               </div>
               <div className="input__container">
-                <input type="password" placeholder="Password" />
+                <input
+                  onChange={handleOnChange}
+                  value={password}
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                />
               </div>
               <button className="email__continue">Sign in</button>
             </form>
