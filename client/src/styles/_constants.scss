@@ -57,3 +57,12 @@
     }
   }
 }
+
+@mixin authbutton {
+  border: none;
+  outline: none;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 18px;
+  // cursor: pointer;
+}

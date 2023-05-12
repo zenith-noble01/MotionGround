@@ -1,0 +1,115 @@
+@import "./constants";
+@import "./variables";
+
+.app__auth {
+  min-height: 100vh;
+  width: 100%;
+  @include flexCenter;
+
+  button {
+    @include authbutton;
+    @include flexCenter;
+    gap: 1rem;
+    font-family: $gt;
+    font-weight: 500;
+    transition: background 0.2s ease 0s, color 0.2s ease 0s,
+      opacity 0.2s ease 0s, box-shadow 0.2s ease 0s;
+    cursor: pointer;
+
+    svg {
+      font-size: 1.5rem;
+    }
+
+    &.google__continue {
+      background: $secondary-color;
+      color: $primary-color;
+
+      &:hover {
+        background: #0077ff;
+      }
+    }
+
+    &.email__continue {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px,
+        rgba(0, 0, 0, 0.08) 0px 2px 10px 0px;
+      background: $primary-color;
+
+      &:hover {
+        background: whitesmoke;
+      }
+    }
+  }
+
+  .auth__container {
+    width: fit-content;
+    background: $primary-color;
+    @include boxshadow;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    @include flexDirection(column);
+    gap: 2rem;
+    width: 470px;
+
+    .form__header {
+      text-align: center;
+      @include flexDirection(column);
+      gap: 1rem;
+
+      .logo {
+        font-weight: bold;
+      }
+    }
+
+    .form__container {
+      @include flexDirection(column);
+      gap: 1rem;
+      width: 100%;
+
+      form {
+        width: 100%;
+        @include flexDirection(column);
+        gap: 1rem;
+
+        .inputs {
+          @include flexDirection(row);
+          gap: 1rem;
+        }
+
+        .input__container {
+          flex: 1;
+
+          input {
+            width: 100%;
+            @include authbutton;
+            background: $p-n;
+            padding: 0 20px;
+            min-width: 190px;
+            // cursor: default;
+
+            &::placeholder {
+              font-family: $gt;
+            }
+          }
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+
+    .auth {
+      @include flexDirection(column);
+      gap: 1rem;
+    }
+
+    .link__text {
+      text-align: center;
+      color: $p-neutral;
+
+      a {
+        color: $secondary-color;
+      }
+    }
+  }
+}
