@@ -50,6 +50,10 @@ const Register = () => {
               <div className="input__container">
                 <input type="email" placeholder="Email" />
               </div>
+              <div className="input__container">
+                <input type="password" placeholder="Password" />
+              </div>
+
               <button className="email__continue">Continue with email</button>
             </form>
             <div className="verify__container">
