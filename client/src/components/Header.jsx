@@ -16,7 +16,7 @@ const Header = () => {
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          MotionCanvas
+          MotionGround
         </motion.a>
         <ul>
           {headerRoutes.map((route, index) => (

@@ -47,7 +47,7 @@ function LandingPage() {
         animate={control}
         variants={textVariant()}
       >
-        <p>&copy; MotionCanvas {currentYear}. All rights reserved.</p>
+        <p>&copy; MotionGround {currentYear}. All rights reserved.</p>
 
         <span>
           Made with 🫀 By{" "}

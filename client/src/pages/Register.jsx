@@ -31,9 +31,9 @@ const Register = () => {
       <div className="auth__container">
         <div className="form__header">
           <div className="logo">
-            <p>MotionCanvas</p>
+            <p>MotionGround</p>
           </div>
-          <h2>Create your MotionCanvas account</h2>
+          <h2>Create your MotionGround account</h2>
         </div>
         {isClicked ? (
           <div className="form__container">

@@ -31,7 +31,7 @@ const Hero = () => {
         Create Stunning Animations <br /> with Framer Motion
       </h1>
       <p>
-        MotionCanvas is an online playground for Framer Motion that lets you{" "}
+        MotionGround is an online playground for Framer Motion that lets you{" "}
         <br />
         visually create and customize animations and transitions with ease.
       </p>
