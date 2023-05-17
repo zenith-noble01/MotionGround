@@ -9,5 +9,6 @@ import Loading from "./Loader";
 import ControlPanel from "./ControlPanel";
 import Preview from "./Preview";
 import CodePreview from "./CodePreview";
+import ActionPanel from "./ActionPanel";
 
-export { Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview }
+export { Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview, ActionPanel }

@@ -1,0 +1,13 @@
+@import "./constants";
+@import "./variables";
+
+.playground__preview {
+  width: 50%;
+  background: pink;
+  position: relative;
+
+  .preview__container {
+    height: 100%;
+    background: rgb(203, 197, 197);
+  }
+}
