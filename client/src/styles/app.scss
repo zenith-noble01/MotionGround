@@ -28,3 +28,9 @@ a {
 ul {
   list-style: none;
 }
+
+button,
+input,
+input::placeholder {
+  font-family: $gt;
+}

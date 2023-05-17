@@ -4,4 +4,21 @@
 .play__control {
   width: 25%;
   background: $darkest;
+
+  .control__container {
+    width: 100%;
+    height: 100%;
+    @include flexAlign;
+    .sm__control {
+      height: 100%;
+      width: 70px;
+      background: $darkest;
+    }
+
+    .hg__control {
+      height: 100%;
+      width: calc(100% - 70px);
+      background: $dark-sm;
+    }
+  }
 }
