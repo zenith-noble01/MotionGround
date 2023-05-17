@@ -9,13 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.5.1",
     "blurhash": "^2.0.5",
     "framer-motion": "^10.12.4",
+    "monaco-editor-webpack-plugin": "^7.0.1",
     "react": "^18.2.0",
     "react-blurhash": "^0.3.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-intersection-observer": "^9.4.3",
+    "react-monaco-editor": "^0.52.0",
     "react-router-dom": "^6.11.0",
     "sass": "^1.62.1",
     "zotion": "^1.1.5"

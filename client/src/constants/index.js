@@ -31,3 +31,25 @@ export const features = [
         text: "Export your creations in one click and use them in your Framer Motion or React projects", icon: FaCloudDownloadAlt
     },
 ]
+
+export const options = {
+    autoIndent: 'full',
+    contextmenu: true,
+    fontFamily: 'monospace',
+    fontSize: 13,
+    lineHeight: 24,
+    hideCursorInOverviewRuler: true,
+    matchBrackets: 'always',
+    minimap: {
+        enabled: true,
+    },
+    scrollbar: {
+        horizontalSliderSize: 4,
+        verticalSliderSize: 18,
+    },
+    selectOnLineNumbers: true,
+    roundedSelection: false,
+    readOnly: false,
+    cursorStyle: 'line',
+    automaticLayout: true,
+}; 

@@ -1,0 +1,29 @@
+@import "./constants";
+@import "./variables";
+
+.app__editor {
+  display: flex;
+  min-height: 100vh;
+
+  .react-monaco-editor-container {
+    height: 100vh !important;
+  }
+
+  .preview {
+    width: 100%;
+    height: 50vh;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    border-radius: 4px;
+
+    &::before {
+      display: block;
+      content: "Preview";
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
