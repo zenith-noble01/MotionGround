@@ -9,5 +9,55 @@
   .preview__container {
     height: 100%;
     background: rgb(203, 197, 197);
+    padding: 2rem;
+    overflow: auto;
+    .preview__header {
+      background: $darkest;
+      width: 80%;
+      margin: 0 auto;
+      padding: 0.5rem;
+      border-radius: 10px;
+
+      .header__container {
+        @include flexAlign;
+        @include flexBetween;
+
+        .header__name {
+          span {
+            @include flexAlign;
+            gap: 0.5rem;
+            p {
+              width: 200px;
+              height: 20px;
+              overflow: hidden;
+              outline: none;
+              border: 1px solid $darkest;
+              transition: $trans;
+
+              &:focus {
+                border: 1px solid $secondary-color;
+              }
+            }
+          }
+        }
+
+        .toggle__container {
+          button {
+            padding: 0.5rem 1rem;
+            background: $secondary-color;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            transition: $trans;
+            border-radius: 0.5rem;
+            color: $primary-color;
+
+            &:hover {
+              background: $secondary-d;
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -5,13 +5,37 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  background: $darkest;
+  border: 1px solid $p-neutral;
 
   .code__header {
     height: 40px;
-    background: blue;
+    background: $darkest;
     @include flexAlign;
-    padding: 0 1rem;
+    padding: 1.5rem;
     @include flexBetween;
+    border-bottom: 1px solid $p-neutral;
+
+    p {
+      @include flexAlign;
+      gap: 0.3rem;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      background: $secondary-color;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      transition: $trans;
+      border-radius: 0.5rem;
+      color: $primary-color;
+
+      &:hover {
+        background: $secondary-d;
+      }
+    }
   }
 
   .codepreview__code {
