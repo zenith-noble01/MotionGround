@@ -19,6 +19,13 @@
       height: 100%;
       width: calc(100% - 70px);
       background: $dark-sm;
+      padding: 1rem;
+
+      .control__header {
+        width: fit-content;
+        background: $dark-sm;
+        margin: 0 auto;
+      }
     }
   }
 }

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/controlPanel.scss";
 
 const ControlPanel = () => {
+  const [active, setActive] = useState(false);
   return (
     <div className="play__control">
       <div className="control__container">
