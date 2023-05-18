@@ -6,7 +6,12 @@ const ControlPanel = () => {
     <div className="play__control">
       <div className="control__container">
         <div className="sm__control">1</div>
-        <div className="hg__control">3</div>
+        <div className="hg__control">
+          <div className="control__header">
+            <button>Create</button>
+            <button>Edit</button>
+          </div>
+        </div>
       </div>
     </div>
   );
