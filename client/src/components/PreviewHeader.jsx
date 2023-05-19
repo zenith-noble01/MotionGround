@@ -1,3 +1,5 @@
+import { createEditor } from "slate";
+
 const PreviewHeader = ({ mode, setMode }) => {
   const handleChangeMode = () => {
     if (mode === "editor") {
@@ -7,14 +9,15 @@ const PreviewHeader = ({ mode, setMode }) => {
     }
   };
 
+  const editor = createEditor();
+  editor.isInline = (element) => element.type === "mention";
+
+  console.log(editor);
+
   return (
     <div className="preview__header">
       <div className="header__container">
-        <div className="header__name">
-          <span>
-            <p contentEditable="true">Untitled</p>
-          </span>
-        </div>
+        <div className="header__name"></div>
         <div className="toggle__container">
           <button onClick={handleChangeMode}>
             {mode === "editor" ? "Editor mode" : "Code mode"}

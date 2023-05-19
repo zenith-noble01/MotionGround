@@ -13,5 +13,6 @@ import ActionPanel from "./ActionPanel";
 import PreviewHeader from "./PreviewHeader";
 import BaseElements from "./BaseElements";
 import LayoutElements from "./LayoutElements";
+import Mini from "./Mini";
 
-export { Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview, ActionPanel, PreviewHeader, BaseElements, LayoutElements }
+export { Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview, ActionPanel, PreviewHeader, BaseElements, LayoutElements, Mini }

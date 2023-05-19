@@ -55,13 +55,7 @@
         gap: 1rem;
         @include flexDirection(column);
         gap: 1rem;
-
-        .base__elements {
-          flex: 1;
-        }
-        .layout__elements {
-          flex: 1;
-        }
+        padding-right: 0.3rem;
       }
     }
   }

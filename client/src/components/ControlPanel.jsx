@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/controlPanel.scss";
-import { LayoutElements, BaseElements } from "./";
+import { LayoutElements, BaseElements, Mini } from "./";
 
 const ControlPanel = () => {
   const [active, setActive] = useState(false);
@@ -9,7 +9,9 @@ const ControlPanel = () => {
   return (
     <div className="play__control">
       <div className="control__container">
-        <div className="sm__control">1</div>
+        <div className="sm__control">
+          <Mini />
+        </div>
         <div className="hg__control">
           <div className="control__header">
             <button
