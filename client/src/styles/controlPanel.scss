@@ -2,7 +2,7 @@
 @import "./variables";
 
 .play__control {
-  width: 25%;
+  width: 20%;
   background: $darkest;
 
   .control__container {
@@ -28,6 +28,7 @@
         margin: 0 auto;
         border-radius: 5px;
         overflow: hidden;
+        width: 100%;
 
         button {
           background: none;
@@ -37,6 +38,7 @@
           cursor: pointer;
           color: $primary-color;
           font-weight: bold;
+          width: 50%;
 
           &.active {
             background: $secondary-color;

@@ -1,5 +1,7 @@
 import { FaMagic, FaHandsHelping, FaCloudDownloadAlt } from "react-icons/fa"
-import { AiFillExperiment, AiOutlineAntDesign } from "react-icons/ai"
+import { AiFillExperiment } from "react-icons/ai"
+import { RxButton, RxText } from "react-icons/rx"
+import { BsImage, BsInputCursorText } from "react-icons/bs"
 
 export const headerRoutes = [
     {
@@ -52,4 +54,23 @@ export const options = {
     readOnly: false,
     cursorStyle: 'line',
     automaticLayout: true,
-}; 
+};
+
+export const baseElements = [
+    {
+        name: "text",
+        icon: RxText
+    },
+    {
+        name: "image",
+        icon: BsImage
+    },
+    {
+        name: "button",
+        icon: RxButton
+    },
+    {
+        name: "input",
+        icon: BsInputCursorText
+    },
+]
