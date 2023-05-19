@@ -11,15 +11,15 @@ const BaseElements = () => {
 
   return (
     <div className="base__elements">
-      <div className="base__container">
-        <motion.div
-          className="base__header"
-          onClick={() => setIsOpen((prev) => !prev)}
-        >
-          <p>
+      <div className={isOpen ? "base__container gap" : "base__container"}>
+        <motion.div className="base__header">
+          <button
+            className={isOpen ? "op" : ""}
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
             Base Elements
             <BsChevronRight className={`rotate-icon ${isOpen ? "open" : ""}`} />
-          </p>
+          </button>
         </motion.div>
         <motion.nav
           initial="closed"
@@ -28,7 +28,7 @@ const BaseElements = () => {
             open: { height: "auto" },
             closed: { height: 0 },
           }}
-          className={isOpen ? "base__content gap" : "base__content"}
+          className="base__content"
         >
           {baseElements.map((el, index) => (
             <motion.div
