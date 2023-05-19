@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 const BaseElements = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  console.log(isOpen);
+
   return (
     <div className="base__elements">
       <div className="base__container">
