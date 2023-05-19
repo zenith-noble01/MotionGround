@@ -5,7 +5,7 @@ import { BsChevronRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 
 const BaseElements = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   console.log(isOpen);
 
