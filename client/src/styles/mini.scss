@@ -1,0 +1,28 @@
+@import "./constants";
+@import "./variables";
+
+.mini {
+  @include flexDirection(column);
+  height: 100%;
+  @include flexCenter;
+  padding: 1rem 0;
+  .mini__container {
+    height: 100%;
+    // background: $secondary-color;
+    @include flexDirection(column);
+
+    .mini__routes {
+      flex: 1;
+    }
+
+    .mini__profile {
+      img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        object-fit: cover;
+      }
+    }
+  }
+}
