@@ -4,7 +4,7 @@ import { LayoutElements, BaseElements, Mini } from "./";
 
 const ControlPanel = () => {
   const [active, setActive] = useState(false);
-  console.log(active);
+  // console.log(active);
 
   return (
     <div className="play__control">

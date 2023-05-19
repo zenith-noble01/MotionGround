@@ -17,7 +17,8 @@ const BaseElements = () => {
           onClick={() => setIsOpen((prev) => !prev)}
         >
           <p>
-            Base Elements <BsChevronRight />
+            Base Elements
+            <BsChevronRight className={`rotate-icon ${isOpen ? "open" : ""}`} />
           </p>
         </motion.div>
         <motion.nav
@@ -27,7 +28,7 @@ const BaseElements = () => {
             open: { height: "auto" },
             closed: { height: 0 },
           }}
-          className="base__content"
+          className={isOpen ? "base__content gap" : "base__content"}
         >
           {baseElements.map((el, index) => (
             <motion.div
