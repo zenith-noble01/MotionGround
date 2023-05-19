@@ -3,7 +3,6 @@
 
 .base__elements {
   padding-top: 1rem;
-  // background: red;
 
   .base__container {
     width: 100%;
@@ -66,8 +65,8 @@
         }
 
         &:hover {
-          border: 1px solid red;
-          background: red;
+          border: 1px solid $secondary-color;
+          background: $secondary-color;
         }
       }
     }
