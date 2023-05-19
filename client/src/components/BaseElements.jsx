@@ -10,8 +10,8 @@ const BaseElements = () => {
           <p>Base Elements</p>
         </div>
         <div className="base__content">
-          {baseElements.map((el) => (
-            <div className="base">
+          {baseElements.map((el, index) => (
+            <div className="base" key={index}>
               <el.icon />
               {el.name}
             </div>

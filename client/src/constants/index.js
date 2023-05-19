@@ -73,4 +73,20 @@ export const baseElements = [
         name: "input",
         icon: BsInputCursorText
     },
+    {
+        name: "text",
+        icon: RxText
+    },
+    {
+        name: "image",
+        icon: BsImage
+    },
+    {
+        name: "button",
+        icon: RxButton
+    },
+    {
+        name: "input",
+        icon: BsInputCursorText
+    },
 ]
