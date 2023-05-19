@@ -23,8 +23,28 @@
 
       .control__header {
         width: fit-content;
-        background: $dark-sm;
+        background: $dark-sm-m;
         margin: 0 auto;
+        border-radius: 5px;
+        overflow: hidden;
+
+        button {
+          background: none;
+          border: none;
+          padding: 0.7rem 1rem;
+          transition: $trans;
+          cursor: pointer;
+          color: $primary-color;
+          font-weight: bold;
+
+          &.active {
+            background: $secondary-color;
+
+            &:hover {
+              background: $secondary-d;
+            }
+          }
+        }
       }
     }
   }
