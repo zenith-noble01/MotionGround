@@ -11,5 +11,7 @@ import Preview from "./Preview";
 import CodePreview from "./CodePreview";
 import ActionPanel from "./ActionPanel";
 import PreviewHeader from "./PreviewHeader";
+import BaseElements from "./BaseElements";
+import LayoutElements from "./LayoutElements";
 
-export { Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview, ActionPanel, PreviewHeader }
+export { Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview, ActionPanel, PreviewHeader, BaseElements, LayoutElements }

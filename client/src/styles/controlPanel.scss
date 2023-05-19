@@ -20,6 +20,7 @@
       width: calc(100% - 70px);
       background: $dark-sm;
       padding: 1rem;
+      @include flexDirection(column);
 
       .control__header {
         width: fit-content;
@@ -44,6 +45,20 @@
               background: $secondary-d;
             }
           }
+        }
+      }
+
+      .elements__container {
+        flex: 1;
+        gap: 1rem;
+        @include flexDirection(column);
+        gap: 1rem;
+
+        .base__elements {
+          flex: 1;
+        }
+        .layout__elements {
+          flex: 1;
         }
       }
     }

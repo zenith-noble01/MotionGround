@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/controlPanel.scss";
+import { LayoutElements, BaseElements } from "./";
 
 const ControlPanel = () => {
   const [active, setActive] = useState(false);
@@ -25,8 +26,8 @@ const ControlPanel = () => {
             </button>
           </div>
           <div className="elements__container">
-            <div className="base__elements"></div>
-            <div className="Layouts__elements"></div>
+            <BaseElements />
+            <LayoutElements />
           </div>
         </div>
       </div>
