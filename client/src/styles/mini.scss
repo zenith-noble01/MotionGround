@@ -13,7 +13,55 @@
 
     .mini__routes {
       flex: 1;
-      // background: green;
+
+      .logo {
+        height: 40px;
+        width: 40px;
+        background: $secondary-color;
+        border-radius: 5px;
+        position: relative;
+        .abstrac1 {
+          position: absolute;
+          height: 10px;
+          width: 70%;
+          background: $darkest;
+          border-radius: 0 5px 5px 0;
+          transform: rotate(50deg);
+          top: 0px;
+          left: -5px;
+        }
+        .abstrac2 {
+          position: absolute;
+          height: 10px;
+          width: 70%;
+          background: $darkest;
+          bottom: 0;
+          right: -5px;
+          border-radius: 5px 0 0 5px;
+          transform: rotate(50deg);
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 10px;
+          width: 30%;
+          background: $darkest;
+          bottom: 0;
+          left: 0;
+          border-radius: 0 5px 0 0;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          height: 10px;
+          width: 30%;
+          background: $darkest;
+          top: 0;
+          right: 0;
+          border-radius: 0 0 0 5px;
+        }
+      }
     }
 
     .mini__profile {
