@@ -29,6 +29,8 @@
           width: 70%;
           transform: rotate(50deg);
           background: $darkest;
+          animation: loading 2s infinite linear;
+          animation-delay: 0s;
         }
         .abstrac1 {
           border-radius: 0 5px 5px 0;
@@ -39,6 +41,24 @@
           bottom: 0;
           right: -5px;
           border-radius: 5px 0 0 5px;
+        }
+
+        @keyframes loading {
+          0% {
+            width: 70%;
+          }
+          5% {
+            width: 60%; /* set the width to the desired size */
+          }
+          50% {
+            width: 30%;
+          }
+          95% {
+            width: 60%;
+          }
+          100% {
+            width: 70%;
+          }
         }
 
         &::after,
