@@ -9,11 +9,11 @@ import {
   Login,
   Playground,
   Register,
+  Test,
 } from "./pages";
 import { Loading } from "./components";
 
 const App = () => {
-  
   return (
     <div>
       <Routes>
@@ -62,6 +62,14 @@ const App = () => {
           element={
             <Suspense fallback={<Loading />}>
               <Editor />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/test"
+          element={
+            <Suspense fallback={<Loading />}>
+              <Test />
             </Suspense>
           }
         />
