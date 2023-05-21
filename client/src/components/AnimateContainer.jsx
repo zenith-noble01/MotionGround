@@ -10,31 +10,153 @@ const AnimateContainer = () => {
     duration: "",
   });
 
-  const [annimType, setAnnimType] = useState(false);
+  const [annimType, setAnnimType] = useState("");
 
   const { annimationType, direction, type, delay, duration } = annimations;
 
   const handleOnChange = (e) => {
-    setAnnimations((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    const { name, value } = e.target;
+
+    if (name === "annimationType" && value === "Text Variants") {
+      const newAnimations = { delay: annimations.delay };
+      setAnnimations(newAnimations);
+      setAnnimType("text");
+    } else if (name === "annimationType" && value === "Zoom In") {
+      const newAnimations = {
+        delay: annimations.delay,
+        duration: annimations.duration,
+      };
+      setAnnimations(newAnimations);
+      setAnnimType("zoom");
+    } else if (
+      (name === "annimationType" && value === "Fade In") ||
+      (name === "annimationType" && value === "Slide In") ||
+      (name === "annimationType" && value === "")
+    ) {
+      setAnnimType("fade");
+    } else {
+      setAnnimations((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
   };
 
-  useEffect(() => {
-    if (annimationType === "Text Variants") {
-      setAnnimType(true);
-    } else {
-      setAnnimType(false);
-    }
-  }, [annimationType]);
+  const renderDelayOptions = () => {
+    return (
+      <div className="animation__prop">
+        <div className="annimationHeader">
+          <p>Delay</p>
+        </div>
+        <div className="animation__content">
+          <input
+            type="number"
+            name="delay"
+            onChange={handleOnChange}
+            placeholder="0"
+            value={delay}
+          />
+        </div>
+      </div>
+    );
+  };
 
+  const renderDurationOptions = () => {
+    return (
+      <div className="animation__prop">
+        <div className="annimationHeader">
+          <p>Duration</p>
+        </div>
+        <div className="animation__content">
+          <input
+            type="number"
+            name="duration"
+            onChange={handleOnChange}
+            placeholder="0"
+            value={duration}
+          />
+        </div>
+      </div>
+    );
+  };
+
+  const renderDirectionOptions = () => {
+    return (
+      <div className="animation__prop">
+        <div className="annimationHeader">
+          <p>Direction</p>
+        </div>
+        <div className="animation__content">
+          <select name="direction" value={direction} onChange={handleOnChange}>
+            {directions.map((direction, index) => (
+              <option value={direction.name} key={index}>
+                {direction.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+    );
+  };
+
+  const renderTypeOptions = () => {
+    return (
+      <div className="animation__prop">
+        <div className="annimationHeader">
+          <p>Type</p>
+        </div>
+        <div className="animation__content">
+          <select name="type" value={type} onChange={handleOnChange}>
+            {types.map((type, index) => (
+              <option value={type.name} key={index}>
+                {type.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+    );
+  };
+
+  const renderAnimationOptions = () => {
+    switch (annimType) {
+      case "text":
+        return renderDelayOptions();
+      case "zoom":
+        return (
+          <>
+            {renderDelayOptions()}
+            {renderDurationOptions()}
+          </>
+        );
+      case "fade":
+        return (
+          <>
+            {renderDirectionOptions()}
+            {renderTypeOptions()}
+            {renderDelayOptions()}
+            {renderDurationOptions()}
+          </>
+        );
+      default:
+        return (
+          <>
+            {renderDirectionOptions()}
+            {renderTypeOptions()}
+            {renderDelayOptions()}
+            {renderDurationOptions()}
+          </>
+        );
+    }
+  };
+
+  // console.log(annimationType);
   return (
     <div className="annimate__container">
       <div className="container__wrapper">
         <div className="animation__prop">
           <div className="annimationHeader">
-            <p>Annimation Type</p>
+            <p>Animation Type</p>
           </div>
           <div className="animation__content">
             <select
@@ -50,66 +172,8 @@ const AnimateContainer = () => {
             </select>
           </div>
         </div>
-        <div className="animation__prop">
-          <div className="annimationHeader">
-            <p>Direction</p>
-          </div>
-          <div className="animation__content">
-            <select
-              name="direction"
-              value={direction}
-              onChange={handleOnChange}
-            >
-              {directions.map((direction, index) => (
-                <option value={direction.name} key={index}>
-                  {direction.name}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-        <div className="animation__prop">
-          <div className="annimationHeader">
-            <p>Type</p>
-          </div>
-          <div className="animation__content">
-            <select name="type" value={type} onChange={handleOnChange}>
-              {types.map((type, index) => (
-                <option value={type.name} key={index}>
-                  {type.name}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-        <div className="animation__prop">
-          <div className="annimationHeader">
-            <p>Delay</p>
-          </div>
-          <div className="animation__content">
-            <input
-              type="number"
-              name="delay"
-              onChange={handleOnChange}
-              placeholder="0"
-              value={delay}
-            />
-          </div>
-        </div>
-        <div className="animation__prop">
-          <div className="annimationHeader">
-            <p>Duration</p>
-          </div>
-          <div className="animation__content">
-            <input
-              type="number"
-              name="duration"
-              onChange={handleOnChange}
-              placeholder="0"
-              value={duration}
-            />
-          </div>
-        </div>
+
+        {renderAnimationOptions()}
       </div>
     </div>
   );
