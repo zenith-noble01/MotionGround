@@ -52,6 +52,33 @@
           .animation__prop {
             @include flexDirection(column);
             gap: 0.5rem;
+
+            .annimationHeader {
+              color: $p-neutral;
+            }
+
+            .animation__content {
+              @include flexDirection(column);
+              gap: 0.5rem;
+
+              select,
+              input {
+                height: 30px;
+                background: none;
+                border: 1px solid $p-neutral;
+                outline: none;
+                color: $neutral-color;
+                font-family: $gt;
+                padding: 0 1rem;
+                appearance: none;
+              }
+              option {
+                background-color: #fff;
+                color: #333;
+                font-size: 16px;
+                outline: none;
+              }
+            }
           }
         }
       }
