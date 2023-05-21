@@ -1,29 +1,7 @@
 import { motion } from "framer-motion";
+import "../styles/loadingannimation.scss";
 
 const LoadingAnimation = () => {
-  const shape = {
-    height: 10,
-    width: "70%",
-    background: "blue",
-    borderRadius: "0px",
-    position: "absolute",
-    top: 0,
-    left: "-100%",
-    marginRight: "-10%",
-  };
-
-  const shape1 = {
-    ...shape,
-    borderRightRadius: "5px",
-  };
-
-  const shape2 = {
-    ...shape,
-    left: "auto",
-    right: "-100%",
-    borderLeftRadius: "5px",
-  };
-
   const animationVariants = {
     start: {
       translateX: [0, "70%", "70%", "0%", "0%"],
@@ -39,15 +17,19 @@ const LoadingAnimation = () => {
     repeatDelay: 0.5,
   };
   return (
-    <motion.div
-      className="logo"
-      variants={animationVariants}
-      animate="start"
-      transition={animationTransition}
-    >
-      <motion.div className="shape1 shape" style={shape1} />
-      <motion.div className="shape2 shape" style={shape2} />
-    </motion.div>
+    <div className="app__loadingannimation">
+      <motion.div
+        className="logo"
+        variants={animationVariants}
+        animate="start"
+        transition={animationTransition}
+      >
+        <motion.div className="shape shape1" />
+        <motion.div className="shape shape2" />
+        <motion.div className="shape shape3" />
+        <motion.div className="shape shape4" />
+      </motion.div>
+    </div>
   );
 };
 

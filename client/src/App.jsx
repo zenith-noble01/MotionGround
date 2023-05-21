@@ -11,7 +11,7 @@ import {
   Register,
   Test,
 } from "./pages";
-import { Loading } from "./components";
+import { Loading, LoadingAnnimation } from "./components";
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
         <Route
           path="/"
           element={
-            <Suspense fallback={<Loading />}>
+            <Suspense fallback={<LoadingAnnimation />}>
               <LandingPage />
             </Suspense>
           }
