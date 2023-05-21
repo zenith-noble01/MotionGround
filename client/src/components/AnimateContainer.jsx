@@ -21,25 +21,9 @@ const AnimateContainer = () => {
     }));
   };
 
-  // useEffect(() => {
-  //   const annim = {
-  //     annimationType,
-  //     direction,
-  //     type,
-  //     delay: parseFloat(delay),
-  //     duration: parseFloat(duration),
-  //   };
-  // }, [annimations]);
-
   useEffect(() => {
     if (annimationType === "Text Variants") {
       setAnnimType(true);
-
-      setAnnimations({
-        duration: "",
-      });
-
-      console.log(annimations);
     } else {
       setAnnimType(false);
     }
