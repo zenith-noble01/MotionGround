@@ -4,4 +4,42 @@
 .playground__actionPanel {
   width: 25%;
   background: $darkest;
+  padding: 1rem;
+
+  .actionpanel__container {
+    height: 100%;
+    @include flexDirection(column);
+    gap: 1rem;
+
+    .panel__header {
+      width: fit-content;
+      background: $dark-sm-m;
+      border-radius: 5px;
+      overflow: hidden;
+      width: 100%;
+
+      button {
+        background: none;
+        border: none;
+        padding: 0.7rem 1rem;
+        transition: $trans;
+        cursor: pointer;
+        color: $primary-color;
+        font-weight: bold;
+        width: 50%;
+
+        &.active {
+          background: $secondary-color;
+
+          &:hover {
+            background: $secondary-d;
+          }
+        }
+      }
+    }
+
+    .wrapper {
+      flex: 1;
+    }
+  }
 }

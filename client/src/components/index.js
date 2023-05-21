@@ -15,5 +15,10 @@ import BaseElements from "./BaseElements";
 import LayoutElements from "./LayoutElements";
 import Mini from "./Mini";
 import LoadingAnnimation from "./LoadingAnnimatio"
+import AnimateContainer from "./AnimateContainer"
+import CustomizeContainer from "./CustomizeContainer"
 
-export { Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview, ActionPanel, PreviewHeader, BaseElements, LayoutElements, Mini, LoadingAnnimation }
+export {
+    Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview, ActionPanel, PreviewHeader, BaseElements, LayoutElements, Mini, LoadingAnnimation, AnimateContainer,
+    CustomizeContainer
+}
