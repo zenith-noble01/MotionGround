@@ -10,6 +10,8 @@ const AnimateContainer = () => {
     duration: "",
   });
 
+  const [annimType, setAnnimType] = useState(false);
+
   const { annimationType, direction, type, delay, duration } = annimations;
 
   const handleOnChange = (e) => {
@@ -19,19 +21,29 @@ const AnimateContainer = () => {
     }));
   };
 
-  const handleCLick = () => {
-    const newthis = parseFloat(delay);
-  };
+  // useEffect(() => {
+  //   const annim = {
+  //     annimationType,
+  //     direction,
+  //     type,
+  //     delay: parseFloat(delay),
+  //     duration: parseFloat(duration),
+  //   };
+  // }, [annimations]);
 
   useEffect(() => {
-    const annim = {
-      annimationType,
-      direction,
-      type,
-      delay: parseFloat(delay),
-      duration: parseFloat(duration),
-    };
-  }, [annimations]);
+    if (annimationType === "Text Variants") {
+      setAnnimType(true);
+
+      setAnnimations({
+        duration: "",
+      });
+
+      console.log(annimations);
+    } else {
+      setAnnimType(false);
+    }
+  }, [annimationType]);
 
   return (
     <div className="annimate__container">
@@ -114,8 +126,6 @@ const AnimateContainer = () => {
             />
           </div>
         </div>
-
-        <button onClick={handleCLick}>go</button>
       </div>
     </div>
   );
