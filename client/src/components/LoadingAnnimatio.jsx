@@ -1,16 +1,6 @@
 import { motion } from "framer-motion";
 
 const LoadingAnimation = () => {
-  const container = {
-    height: "35px",
-    width: "35px",
-    // background: "black",
-    borderRadius: 10,
-    cursor: "pointer",
-    position: "relative",
-    overflow: "hidden",
-  };
-
   const shape = {
     height: 10,
     width: "70%",
@@ -48,17 +38,15 @@ const LoadingAnimation = () => {
     loop: Infinity,
     repeatDelay: 0.5,
   };
-
   return (
     <motion.div
       className="logo"
-      style={container}
       variants={animationVariants}
       animate="start"
       transition={animationTransition}
     >
-      <motion.div className="abstrac1" style={shape1} />
-      <motion.div className="abstrac2" style={shape2} />
+      <motion.div className="shape1 shape" style={shape1} />
+      <motion.div className="shape2 shape" style={shape2} />
     </motion.div>
   );
 };

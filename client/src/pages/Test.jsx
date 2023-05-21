@@ -5,7 +5,7 @@ import "../styles/test.scss";
 const Test = () => {
   return (
     <div className="app__test">
-      <LoadingAnimation />;
+      <LoadingAnimation />
     </div>
   );
 };

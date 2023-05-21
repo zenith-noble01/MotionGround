@@ -4,4 +4,21 @@
   justify-content: center;
   height: 100vh;
   background: green;
+
+  .logo {
+    min-height: 50px;
+    max-width: 50px;
+    background: red;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    .shape {
+      height: 10px;
+      width: 70%;
+      border-radius: 10px;
+      background: blue;
+    }
+  }
 }
