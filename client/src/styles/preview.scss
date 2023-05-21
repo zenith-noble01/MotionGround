@@ -3,12 +3,11 @@
 
 .playground__preview {
   width: 55%;
-  background: pink;
   position: relative;
 
   .preview__container {
     height: 100%;
-    background: rgb(203, 197, 197);
+    background: rgb(255, 255, 255);
     padding: 2rem;
     overflow: auto;
     .preview__header {

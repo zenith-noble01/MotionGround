@@ -7,8 +7,6 @@ import { motion } from "framer-motion";
 const BaseElements = () => {
   const [isOpen, setIsOpen] = useState(true);
 
-  console.log(isOpen);
-
   return (
     <div className="base__elements">
       <div className={isOpen ? "base__container gap" : "base__container"}>

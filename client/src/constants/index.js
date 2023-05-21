@@ -75,3 +75,54 @@ export const baseElements = [
     },
 
 ]
+
+
+export const annimationTypes = [
+    {
+        name: ""
+    },
+    {
+        name: "Text Variants"
+    },
+    {
+        name: "Fade In"
+    },
+    {
+        name: "Slide In"
+    },
+    {
+        name: "Zoom In"
+    },
+]
+
+
+export const directions = [
+    {
+        name: ""
+    },
+    {
+        name: "up"
+    },
+    {
+        name: "right"
+    },
+    {
+        name: "down"
+    },
+    {
+        name: "left"
+    },
+]
+
+
+export const types = [
+    {
+        name: ""
+    },
+    {
+        name: "tween"
+    },
+    {
+        name: "spring"
+    },
+]
