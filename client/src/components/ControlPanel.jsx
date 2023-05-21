@@ -28,8 +28,13 @@ const ControlPanel = () => {
             </button>
           </div>
           <div className="elements__container">
-            <BaseElements />
-            <LayoutElements />
+            {!active && (
+              <>
+                <BaseElements />
+                <LayoutElements />
+              </>
+            )}
+            {active && <div>editor</div>}
           </div>
         </div>
       </div>
