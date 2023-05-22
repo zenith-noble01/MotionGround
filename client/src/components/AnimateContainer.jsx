@@ -126,6 +126,15 @@ const AnimateContainer = () => {
             {renderDurationOptions()}
           </>
         );
+      case "slide":
+        return (
+          <>
+            {renderDirectionOptions()}
+            {renderTypeOptions()}
+            {renderDelayOptions()}
+            {renderDurationOptions()}
+          </>
+        );
       default:
         return (
           <>

@@ -24,10 +24,15 @@ export const animateContainerSlice = createSlice({
                 state.annimType = "zoom";
             } else if (
                 value === "Fade In" ||
-                value === "Slide In" ||
                 value === ""
             ) {
                 state.annimType = "fade";
+                state.direction = "";
+                state.type = "";
+                state.delay = "";
+                state.duration = "";
+            } else if (value === "Slide In") {
+                state.annimType = "slide";
                 state.direction = "";
                 state.type = "";
                 state.delay = "";
