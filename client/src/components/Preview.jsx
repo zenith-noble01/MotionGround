@@ -15,6 +15,7 @@ const Preview = () => {
   const [mode, setMode] = useState("editor");
   const [motionVariant, setMotionVariant] = useState({});
   const [animationKey, setAnimationKey] = useState(Math.random());
+  const [buttonActive, setButtonActive] = useState(false);
 
   const animateContainer = useSelector(selectAnimateContainer);
   const { annimType, delay, duration, direction, type } = animateContainer;
@@ -67,6 +68,9 @@ const Preview = () => {
     // Reload the animation if motionVariant has changed
     if (JSON.stringify(newMotionVariant) !== JSON.stringify(motionVariant)) {
       setAnimationKey(Math.random());
+      setButtonActive(false);
+    } else {
+      setButtonActive(true);
     }
   }, [
     animateContainer,
@@ -87,6 +91,7 @@ const Preview = () => {
         <div className="container">
           <button
             onClick={() => setUseNewAnimation((currentValue) => !currentValue)}
+            className={buttonActive ? "active" : ""}
           >
             {useNewAnimation ? <AiFillPauseCircle /> : <AiFillPlayCircle />}
           </button>
