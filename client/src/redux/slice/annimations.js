@@ -19,7 +19,6 @@ export const animateContainerSlice = createSlice({
             if (value === "Text Variants") {
                 state.annimType = "text";
                 state.delay = "";
-                console.log(state.delay)
             } else if (value === "Zoom In") {
                 state.annimType = "zoom";
                 state.delay = "";

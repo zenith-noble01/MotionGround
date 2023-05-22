@@ -156,6 +156,8 @@ const AnimateContainer = () => {
     }
   };
 
+  // console.log(duration, annimType);
+
   return (
     <div className="annimate__container">
       <div className="container__wrapper">

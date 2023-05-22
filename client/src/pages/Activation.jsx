@@ -8,7 +8,7 @@ const Activation = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(activationCode);
+    // console.log(activationCode);
 
     // Do something with activationCode
   };
