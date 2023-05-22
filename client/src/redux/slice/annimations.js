@@ -19,6 +19,7 @@ export const animateContainerSlice = createSlice({
             if (value === "Text Variants") {
                 state.annimType = "text";
                 state.delay = "";
+                console.log(state.delay)
             } else if (value === "Zoom In") {
                 state.annimType = "zoom";
                 state.delay = "";
@@ -50,6 +51,15 @@ export const animateContainerSlice = createSlice({
             const { name, value } = action.payload;
             state[name] = value;
         },
+        setZoom: (state, action) => {
+            const { name, delay, duration } = action.payload
+            const zoom = { delay, duration }
+
+            state[name] = value
+
+
+            console.log(zoom, state[name] = value);
+        },
         resetAnnimations: (state) => {
             state.annimationType = "";
             state.direction = "";
@@ -65,6 +75,7 @@ export const {
     setAnnimationType,
     setAnnimationProperty,
     resetAnnimations,
+    setZoom
 } = animateContainerSlice.actions;
 
 export const selectAnimateContainer = (state) => state.animateContainer;
