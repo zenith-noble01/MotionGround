@@ -55,15 +55,23 @@
             transition: $trans;
             border-radius: 0.5rem;
             color: $primary-color;
+            @include flexCenter;
 
             &:hover {
               background: $secondary-d;
+            }
+
+            svg {
+              font-size: 1.3rem;
             }
           }
 
           .action_ {
             @include flexAlign;
             gap: 0.5rem;
+            button.active {
+              background: $secondary-d;
+            }
           }
         }
       }
