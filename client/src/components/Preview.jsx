@@ -7,7 +7,7 @@ import { selectAnimateContainer } from "../redux/slice/annimations";
 import { fadeIn, slideIn, textVariant, zoomIn } from "../utils/motion";
 
 const Preview = () => {
-  // const [mode, setMode] = useState(() => "editor");
+  const [mode, setMode] = useState(() => "editor");
   const [motionVariant, setMotionVariant] = useState({});
   const [animationKey, setAnimationKey] = useState(() => Math.random());
   const [buttonActive, setButtonActive] = useState(() => false);
@@ -82,9 +82,9 @@ const Preview = () => {
     <div className="playground__preview">
       <div className="preview__container">
         <PreviewHeader
-          // mode={mode}
+          mode={mode}
           setUseNewAnimation={setUseNewAnimation}
-          // setMode={setMode}
+          setMode={setMode}
           setAnimationKey={setAnimationKey}
           useNewAnimation={useNewAnimation}
           buttonActive={buttonActive}
@@ -101,7 +101,7 @@ const Preview = () => {
           </motion.div>
         </div>
       </div>
-      <CodePreview />
+      <CodePreview mode={mode} setMode={setMode} />
     </div>
   );
 };

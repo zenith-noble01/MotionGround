@@ -1,9 +1,30 @@
 import React from "react";
+import { saveAs } from "file-saver";
 import "../styles/codepreview.scss";
 import { FaCode, FaFileDownload } from "react-icons/fa";
 import Code from "./Code";
 
 const CodePreview = ({ mode, setMode }) => {
+  const handleBackButtonClick = () => {
+    setMode("editor");
+  };
+
+  const handleDownloadClick = () => {
+    const codeBlock = getCodeBlock();
+    const blob = new Blob([codeBlock], { type: "text/plain;charset=utf-8" });
+    saveAs(blob, "animation-code.js");
+  };
+
+  const getCodeBlock = () => {
+    const codeBlockElement = document.querySelector(".codepreview__code pre");
+
+    if (codeBlockElement) {
+      return codeBlockElement.innerText.trim();
+    } else {
+      return "";
+    }
+  };
+
   return (
     <div
       className="playground__codepreview"
@@ -24,22 +45,22 @@ const CodePreview = ({ mode, setMode }) => {
             </p>
           </div>
           {mode === "code" && (
-            <button onClick={() => setMode("editor")} className="back">
+            <button onClick={handleBackButtonClick} className="back">
               Back to Editor mode
             </button>
           )}
           <div className="right__header">
-            <p>
+            <button onClick={handleDownloadClick}>
               <FaFileDownload />
               Download Code
-            </p>
+            </button>
           </div>
         </div>
         <div
           className="codepreview__code"
           style={{ display: mode === "code" ? "block" : "none" }}
         >
-          <Code />
+          <Code mode={mode} />
         </div>
       </div>
     </div>
