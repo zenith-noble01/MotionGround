@@ -7,15 +7,15 @@ import { selectAnimateContainer } from "../redux/slice/annimations";
 import { fadeIn, slideIn, textVariant, zoomIn } from "../utils/motion";
 
 const Preview = () => {
-  const [mode, setMode] = useState("editor");
+  const [mode, setMode] = useState(() => "editor");
   const [motionVariant, setMotionVariant] = useState({});
-  const [animationKey, setAnimationKey] = useState(Math.random());
-  const [buttonActive, setButtonActive] = useState(false);
+  const [animationKey, setAnimationKey] = useState(() => Math.random());
+  const [buttonActive, setButtonActive] = useState(() => false);
 
   const animateContainer = useSelector(selectAnimateContainer);
   const { annimType, delay, duration, direction, type } = animateContainer;
 
-  const [useNewAnimation, setUseNewAnimation] = useState(false);
+  const [useNewAnimation, setUseNewAnimation] = useState(() => false);
 
   useEffect(() => {
     const motionVariants = () => {
