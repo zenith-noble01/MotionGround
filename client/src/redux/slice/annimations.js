@@ -19,12 +19,11 @@ export const animateContainerSlice = createSlice({
             if (value === "Text Variants") {
                 state.annimType = "text";
                 state.delay = "";
-                state.duration = "";
             } else if (value === "Zoom In") {
                 state.annimType = "zoom";
-            } else if (
-                value === "Fade In"
-            ) {
+                state.delay = "";
+                state.duration = "";
+            } else if (value === "Fade In") {
                 state.annimType = "fade";
                 state.direction = "";
                 state.type = "";
