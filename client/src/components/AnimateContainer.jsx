@@ -1,44 +1,32 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { annimationTypes, directions, types } from "../constants";
+import {
+  selectAnimateContainer,
+  setAnnimationProperty,
+  setAnnimationType,
+  resetAnnimations,
+} from "../redux/slice/annimations";
 
 const AnimateContainer = () => {
-  const [annimations, setAnnimations] = useState({
-    annimationType: "",
-    direction: "",
-    type: "",
-    delay: "",
-    duration: "",
-  });
+  const dispatch = useDispatch();
 
-  const [annimType, setAnnimType] = useState("");
+  const { annimationType, direction, type, delay, duration, annimType } =
+    useSelector(selectAnimateContainer);
 
-  const { annimationType, direction, type, delay, duration } = annimations;
+  useEffect(() => {
+    return () => {
+      dispatch(resetAnnimations());
+    };
+  }, [dispatch]);
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === "annimationType" && value === "Text Variants") {
-      const newAnimations = { delay: annimations.delay };
-      setAnnimations(newAnimations);
-      setAnnimType("text");
-    } else if (name === "annimationType" && value === "Zoom In") {
-      const newAnimations = {
-        delay: annimations.delay,
-        duration: annimations.duration,
-      };
-      setAnnimations(newAnimations);
-      setAnnimType("zoom");
-    } else if (
-      (name === "annimationType" && value === "Fade In") ||
-      (name === "annimationType" && value === "Slide In") ||
-      (name === "annimationType" && value === "")
-    ) {
-      setAnnimType("fade");
+    if (name === "annimationType") {
+      dispatch(setAnnimationType(value));
     } else {
-      setAnnimations((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
+      dispatch(setAnnimationProperty({ name, value }));
     }
   };
 
@@ -150,7 +138,6 @@ const AnimateContainer = () => {
     }
   };
 
-  // console.log(annimations);
   return (
     <div className="annimate__container">
       <div className="container__wrapper">
