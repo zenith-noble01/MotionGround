@@ -75,7 +75,7 @@ const Preview = () => {
     type,
     annimType,
     useNewAnimation,
-    motionVariant,
+    // motionVariant,
   ]);
 
   return (
