@@ -19,6 +19,9 @@ export const headerRoutes = [
     {
         name: "blog", path: "/blog"
     },
+    {
+        name: "Playground", path: "/playground"
+    },
 ]
 
 export const features = [
