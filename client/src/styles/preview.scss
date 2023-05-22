@@ -25,20 +25,16 @@
         @include flexBetween;
 
         .header__name {
-          span {
-            @include flexAlign;
-            gap: 0.5rem;
-            p {
-              max-width: 200px;
-              height: 20px;
-              overflow: hidden;
-              outline: none;
-              border: 1px solid $darkest;
-              transition: $trans;
+          p {
+            max-width: 200px;
+            height: 20px;
+            overflow: hidden;
+            outline: none;
+            border: 1px solid $darkest;
+            transition: $trans;
 
-              &:focus {
-                border: 1px solid $secondary-color;
-              }
+            &:focus {
+              border: 1px solid $secondary-color;
             }
           }
         }

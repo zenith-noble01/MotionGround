@@ -1,6 +1,4 @@
-import { createEditor } from "slate";
 import { useState } from "react";
-import { Slate, Editable, withReact } from "slate-react";
 import {
   AiFillPauseCircle,
   AiOutlineReload,
@@ -15,17 +13,13 @@ const PreviewHeader = ({
   useNewAnimation,
   buttonActive,
 }) => {
-  const [value, setValue] = useState([
-    {
-      type: "paragraph",
-      children: [{ text: "Untitled" }],
-    },
-  ]);
+  const [name, setName] = useState("Untitled");
 
-  const handleChange = (newValue) => {
-    setValue(newValue);
+  const handleChangeName = (event) => {
+    setName(event.target.innerText);
   };
 
+  console.log(name);
   const handleChangeMode = () => {
     if (mode === "editor") {
       setMode("code");
@@ -34,20 +28,13 @@ const PreviewHeader = ({
     }
   };
 
-  const editor = createEditor();
-  editor.isInline = (element) => element.type === "mention";
-
   return (
     <div className="preview__header">
       <div className="header__container">
         <div className="header__name">
-          <Slate
-            editor={withReact(editor)}
-            value={value}
-            onChange={handleChange}
-          >
-            <Editable />
-          </Slate>
+          <p contentEditable={true} onInput={handleChangeName}>
+            {name}
+          </p>
         </div>
         <div className="toggle__container">
           <button onClick={handleChangeMode}>
