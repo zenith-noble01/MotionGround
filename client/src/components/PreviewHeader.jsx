@@ -1,8 +1,20 @@
 import { createEditor } from "slate";
 import { useState } from "react";
 import { Slate, Editable, withReact } from "slate-react";
+import {
+  AiFillPauseCircle,
+  AiOutlineReload,
+  AiFillPlayCircle,
+} from "react-icons/ai";
 
-const PreviewHeader = ({ mode, setMode }) => {
+const PreviewHeader = ({
+  mode,
+  setUseNewAnimation,
+  setMode,
+  setAnimationKey,
+  useNewAnimation,
+  buttonActive,
+}) => {
   const [value, setValue] = useState([
     {
       type: "paragraph",
@@ -41,6 +53,19 @@ const PreviewHeader = ({ mode, setMode }) => {
           <button onClick={handleChangeMode}>
             {mode === "editor" ? "Editor mode" : "Code mode"}
           </button>
+          <div className="action_">
+            <button
+              onClick={() =>
+                setUseNewAnimation((currentValue) => !currentValue)
+              }
+              className={buttonActive ? "active" : ""}
+            >
+              {useNewAnimation ? <AiFillPauseCircle /> : <AiFillPlayCircle />}
+            </button>
+            <button onClick={() => setAnimationKey(Math.random())}>
+              <AiOutlineReload />
+            </button>
+          </div>
         </div>
       </div>
     </div>

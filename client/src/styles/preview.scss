@@ -44,6 +44,8 @@
         }
 
         .toggle__container {
+          @include flexAlign;
+          gap: 2rem;
           button {
             padding: 0.5rem 1rem;
             background: $secondary-color;
@@ -57,6 +59,11 @@
             &:hover {
               background: $secondary-d;
             }
+          }
+
+          .action_ {
+            @include flexAlign;
+            gap: 0.5rem;
           }
         }
       }

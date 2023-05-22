@@ -5,11 +5,6 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { selectAnimateContainer } from "../redux/slice/annimations";
 import { fadeIn, slideIn, textVariant, zoomIn } from "../utils/motion";
-import {
-  AiFillPauseCircle,
-  AiOutlineReload,
-  AiFillPlayCircle,
-} from "react-icons/ai";
 
 const Preview = () => {
   const [mode, setMode] = useState("editor");
@@ -86,18 +81,16 @@ const Preview = () => {
   return (
     <div className="playground__preview">
       <div className="preview__container">
-        <PreviewHeader mode={mode} setMode={setMode} />
+        <PreviewHeader
+          mode={mode}
+          setUseNewAnimation={setUseNewAnimation}
+          setMode={setMode}
+          setAnimationKey={setAnimationKey}
+          useNewAnimation={useNewAnimation}
+          buttonActive={buttonActive}
+        />
 
         <div className="container">
-          <button
-            onClick={() => setUseNewAnimation((currentValue) => !currentValue)}
-            className={buttonActive ? "active" : ""}
-          >
-            {useNewAnimation ? <AiFillPauseCircle /> : <AiFillPlayCircle />}
-          </button>
-          <button onClick={() => setAnimationKey(Math.random())}>
-            <AiOutlineReload />
-          </button>
           <motion.div
             key={animationKey}
             initial="hidden"
