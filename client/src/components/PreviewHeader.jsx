@@ -32,7 +32,7 @@ const PreviewHeader = ({
     <div className="preview__header">
       <div className="header__container">
         <div className="header__name">
-          <p contentEditable={true} onInput={handleChangeName}>
+          <p contenteditable={true} onInput={handleChangeName}>
             {name}
           </p>
         </div>
