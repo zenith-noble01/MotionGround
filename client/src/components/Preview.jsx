@@ -13,8 +13,6 @@ const Preview = () => {
   const animateContainer = useSelector(selectAnimateContainer);
   const { annimType, delay, duration, direction, type } = animateContainer;
 
-  // console.log(motionVariant);
-
   useEffect(() => {
     const getMotionVariant = () => {
       switch (annimType) {
