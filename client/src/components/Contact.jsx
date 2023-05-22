@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import { buttonVariant, slideIn } from "../utils/motion";
+import { slideIn } from "../utils/motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import "../styles/contact.scss";
