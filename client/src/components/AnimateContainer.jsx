@@ -135,6 +135,15 @@ const AnimateContainer = () => {
             {renderDurationOptions()}
           </>
         );
+      case "nothing":
+        return (
+          <>
+            {renderDirectionOptions()}
+            {renderTypeOptions()}
+            {renderDelayOptions()}
+            {renderDurationOptions()}
+          </>
+        );
       default:
         return (
           <>
@@ -146,6 +155,8 @@ const AnimateContainer = () => {
         );
     }
   };
+
+  console.log(annimType);
 
   return (
     <div className="annimate__container">

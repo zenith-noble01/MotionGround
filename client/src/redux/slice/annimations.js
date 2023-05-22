@@ -23,8 +23,7 @@ export const animateContainerSlice = createSlice({
             } else if (value === "Zoom In") {
                 state.annimType = "zoom";
             } else if (
-                value === "Fade In" ||
-                value === ""
+                value === "Fade In"
             ) {
                 state.annimType = "fade";
                 state.direction = "";
@@ -33,6 +32,13 @@ export const animateContainerSlice = createSlice({
                 state.duration = "";
             } else if (value === "Slide In") {
                 state.annimType = "slide";
+                state.direction = "";
+                state.type = "";
+                state.delay = "";
+                state.duration = "";
+            } else if (
+                value === "") {
+                state.annimType = "nothing";
                 state.direction = "";
                 state.type = "";
                 state.delay = "";
