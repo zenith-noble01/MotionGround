@@ -28,39 +28,47 @@ const Code = ({ mode }) => {
 
     if (annimType === "text") {
       code = `
-          import { motion } from "framer-motion";
+    import { motion } from "framer-motion";
 
-          const ${name} = () => {
-            
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: ${
-                delay / 1000
-              } } }}
-            >
-              This is a text
-            </motion.div>
+    const ${name} = () => {
+      return (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: ${delay / 1000} } }}
+        >
+        
+          This is a text
 
-          }
+        </motion.div>
+      );
+    };
 
-          export default ${name}
-        `;
+    export default ${name};
+  `;
     } else if (annimType === "zoom") {
       code = `
-          import { motion } from "framer-motion";
+    import { motion } from "framer-motion";
 
-          const ${name} = () => {
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1, transition: { delay: ${
-                delay / 1000
-              }, duration: ${duration / 1000}, ease: "easeIn" } }}
-            >
-              This is a text
-            </motion.div>
+    const ${name} = () => {
+      return (
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{
+            scale: 1,
+            transition: { delay: ${delay / 1000}, duration: ${
+        duration / 1000
+      }, ease: "easeIn" },
+          }}
+        >
+        
+          This is a text
 
-          export default ${name}
-        `;
+        </motion.div>
+      );
+    };
+
+    export default ${name};
+  `;
     } else if (annimType === "fade") {
       let directionValue = "";
 
@@ -75,17 +83,32 @@ const Code = ({ mode }) => {
       }
 
       code = `
-          import { motion } from "framer-motion";
+    import { motion } from "framer-motion";
 
-          <motion.div
-            initial={{ opacity: 0, ${direction}: "${directionValue}" }}
-            animate={{ opacity: 1, ${direction}: 0, transition: { type: "${type}", delay: ${
-        delay / 1000
-      }, duration: ${duration / 1000} } }}
-          >
-            This is a text
-          </motion.div>
-        `;
+    const ${name} = () => {
+      return (
+        <motion.div
+          initial={{
+            opacity: 0,
+            ${direction}: "${directionValue}",
+          }}
+          animate={{
+            opacity: 1,
+            ${direction}: 0,
+            transition: { type: "${type}", delay: ${delay / 1000}, duration: ${
+        duration / 1000
+      } },
+          }}
+        >
+        
+          This is a text
+
+        </motion.div>
+      );
+    };
+
+    export default ${name};
+  `;
     } else if (annimType === "slide") {
       let directionValue = "";
 
@@ -100,23 +123,32 @@ const Code = ({ mode }) => {
       }
 
       code = `
-          import { motion } from "framer-motion";
+    import { motion } from "framer-motion";
 
-          <motion.div
-            initial={{ ${direction}: "${directionValue}" }}
-            animate={{ ${direction}: 0, transition: { type: "${type}", delay: ${
-        delay / 1000
-      }, duration: ${duration / 1000} } }}
-          >
-            This is a text
-          </motion.div>
-        `;
+    const ${name} = () => {
+      return (
+        <motion.div
+          initial={{ ${direction}: "${directionValue}" }}
+          animate={{
+            ${direction}: 0,
+            transition: { type: "${type}", delay: ${delay / 1000}, duration: ${
+        duration / 1000
+      } },
+          }}
+        >
+        
+          This is a text
+
+        </motion.div>
+      );
+    };
+
+    export default ${name};
+  `;
     }
 
     if (code !== "") {
       code = `
-        import { motion } from "framer-motion";
-
         ${code}
       `;
     }
@@ -125,7 +157,11 @@ const Code = ({ mode }) => {
   }, [annimType, delay, direction, duration, type]);
 
   if (mode === "code") {
-    return <pre>{code}</pre>;
+    return (
+      <pre>
+        <code>{code}</code>
+      </pre>
+    );
   } else {
     return null;
   }
