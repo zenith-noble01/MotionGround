@@ -28,7 +28,16 @@ const PreviewHeader = ({
   };
 
   const handleChange = (evt) => {
-    dispatch(setName(evt.target.value));
+    const newName = evt.target.value;
+    let formattedName = newName.trim();
+
+    // Check if the first letter of the name is lowercase and change it to uppercase
+    if (formattedName.charAt(0) === formattedName.charAt(0).toLowerCase()) {
+      formattedName =
+        formattedName.charAt(0).toUpperCase() + formattedName.slice(1);
+    }
+
+    dispatch(setName(formattedName));
   };
 
   console.log(name);

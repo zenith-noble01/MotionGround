@@ -8,7 +8,9 @@ const Code = ({ mode }) => {
 
   const animateContainer = useSelector(selectAnimateContainer);
   const { annimType, delay, direction, duration, type } = animateContainer;
+  const name = useSelector((state) => state.headerName.name);
 
+  console.log(name);
   const directionOptions = directions.map((direction, index) => (
     <option value={direction.name} key={index}>
       {direction.name}
@@ -28,25 +30,36 @@ const Code = ({ mode }) => {
       code = `
           import { motion } from "framer-motion";
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: ${delay / 1000} } }}
-          >
-            This is a text
-          </motion.div>
+          const ${name} = () => {
+            
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: ${
+                delay / 1000
+              } } }}
+            >
+              This is a text
+            </motion.div>
+
+          }
+
+          export default ${name}
         `;
     } else if (annimType === "zoom") {
       code = `
           import { motion } from "framer-motion";
 
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1, transition: { delay: ${
-              delay / 1000
-            }, duration: ${duration / 1000}, ease: "easeIn" } }}
-          >
-            This is a text
-          </motion.div>
+          const ${name} = () => {
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1, transition: { delay: ${
+                delay / 1000
+              }, duration: ${duration / 1000}, ease: "easeIn" } }}
+            >
+              This is a text
+            </motion.div>
+
+          export default ${name}
         `;
     } else if (annimType === "fade") {
       let directionValue = "";
