@@ -39,10 +39,7 @@ const CodePreview = ({ mode, setMode }) => {
       }}
     >
       <div className="codepreview__container">
-        <div
-          className="code__header"
-          style={{ background: mode === "code" ? "#444444" : "blue" }}
-        >
+        <div className="code__header" style={{ background: "#33333333" }}>
           <div className="left__header">
             <p>
               <FaCode />

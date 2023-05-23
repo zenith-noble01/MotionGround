@@ -17,19 +17,19 @@ const LoadingAnimation = () => {
     repeatDelay: 0.5,
   };
   return (
-    <div className="app__loadingannimation">
-      <motion.div
-        className="logo"
-        variants={animationVariants}
-        animate="start"
-        transition={animationTransition}
-      >
-        <motion.div className="shape shape1" />
-        <motion.div className="shape shape2" />
-        <motion.div className="shape shape3" />
-        <motion.div className="shape shape4" />
-      </motion.div>
-    </div>
+    // <div className="app__loadingannimation">
+    <motion.div
+      className="logo"
+      variants={animationVariants}
+      animate="start"
+      transition={animationTransition}
+    >
+      <motion.div className="shape shape1" />
+      <motion.div className="shape shape2" />
+      <motion.div className="shape shape3" />
+      <motion.div className="shape shape4" />
+    </motion.div>
+    // </div>
   );
 };
 

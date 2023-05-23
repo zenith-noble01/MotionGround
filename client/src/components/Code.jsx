@@ -71,15 +71,20 @@ const Code = ({ mode }) => {
   `;
     } else if (annimType === "fade") {
       let directionValue = "";
+      let directionName;
 
-      if (direction === "Up") {
-        directionValue = "-100%";
-      } else if (direction === "Down") {
-        directionValue = "100%";
-      } else if (direction === "Left") {
-        directionValue = "-100%";
-      } else if (direction === "Right") {
-        directionValue = "100%";
+      if (direction === "up") {
+        directionValue = -100;
+        directionName = "y";
+      } else if (direction === "down") {
+        directionValue = 100;
+        directionName = "y";
+      } else if (direction === "left") {
+        directionValue = -100;
+        directionName = "x";
+      } else if (direction === "right") {
+        directionValue = 100;
+        directionName = "x";
       }
 
       code = `
@@ -90,11 +95,11 @@ const Code = ({ mode }) => {
         <motion.div
           initial={{
             opacity: 0,
-            ${direction}: "${directionValue}",
+            ${directionName}: ${directionValue},
           }}
           animate={{
             opacity: 1,
-            ${direction}: 0,
+            ${directionName}: 0,
             transition: { type: "${type}", delay: ${delay / 1000}, duration: ${
         duration / 1000
       } },
@@ -111,15 +116,20 @@ const Code = ({ mode }) => {
   `;
     } else if (annimType === "slide") {
       let directionValue = "";
+      let directionName;
 
-      if (direction === "Up") {
-        directionValue = "-100%";
-      } else if (direction === "Down") {
-        directionValue = "100%";
-      } else if (direction === "Left") {
-        directionValue = "-100%";
-      } else if (direction === "Right") {
-        directionValue = "100%";
+      if (direction === "up") {
+        directionValue = -100;
+        directionName = "y";
+      } else if (direction === "down") {
+        directionValue = 100;
+        directionName = "y";
+      } else if (direction === "left") {
+        directionValue = -100;
+        directionName = "x";
+      } else if (direction === "right") {
+        directionValue = 100;
+        directionName = "x";
       }
 
       code = `
@@ -128,9 +138,9 @@ const Code = ({ mode }) => {
     const ${name} = () => {
       return (
         <motion.div
-          initial={{ ${direction}: "${directionValue}" }}
+          initial={{ ${directionName}: ${directionValue} }}
           animate={{
-            ${direction}: 0,
+            ${directionName}: 0,
             transition: { type: "${type}", delay: ${delay / 1000}, duration: ${
         duration / 1000
       } },
