@@ -26,8 +26,6 @@
     "react-router-dom": "^6.11.0",
     "redux": "^4.2.1",
     "sass": "^1.62.1",
-    "slate": "^0.94.1",
-    "slate-react": "^0.94.2",
     "zotion": "^1.1.5"
   },
   "devDependencies": {
