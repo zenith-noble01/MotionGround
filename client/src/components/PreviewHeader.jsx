@@ -37,6 +37,9 @@ const PreviewHeader = ({
         formattedName.charAt(0).toUpperCase() + formattedName.slice(1);
     }
 
+    // Remove any spaces between words
+    formattedName = formattedName.replace(/\s+/g, "");
+
     dispatch(setName(formattedName));
   };
 
