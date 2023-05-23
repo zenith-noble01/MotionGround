@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   AiFillPauseCircle,
   AiOutlineReload,
   AiFillPlayCircle,
 } from "react-icons/ai";
+import ContentEditable from "react-contenteditable";
+
+import { setName } from "../redux/slice/headerName";
 
 const PreviewHeader = ({
   mode,
@@ -13,13 +16,9 @@ const PreviewHeader = ({
   useNewAnimation,
   buttonActive,
 }) => {
-  const [name, setName] = useState("Untitled");
+  const name = useSelector((state) => state.headerName.name);
+  const dispatch = useDispatch();
 
-  const handleChangeName = (event) => {
-    setName(event.target.innerText);
-  };
-
-  console.log(name);
   const handleChangeMode = () => {
     if (mode === "editor") {
       setMode("code");
@@ -28,13 +27,21 @@ const PreviewHeader = ({
     }
   };
 
+  const handleChange = (evt) => {
+    dispatch(setName(evt.target.value));
+  };
+
+  console.log(name);
+
   return (
     <div className="preview__header">
       <div className="header__container">
         <div className="header__name">
-          <p contenteditable={true} onInput={handleChangeName}>
-            {name}
-          </p>
+          <ContentEditable
+            html={name}
+            onChange={handleChange}
+            className="content"
+          />
         </div>
         <div className="toggle__container">
           <button onClick={handleChangeMode}>

@@ -25,13 +25,14 @@
         @include flexBetween;
 
         .header__name {
-          p {
+          .content {
             max-width: 200px;
             height: 20px;
             overflow: hidden;
             outline: none;
             border: 1px solid $darkest;
             transition: $trans;
+            height: 1.5rem;
 
             &:focus {
               border: 1px solid $secondary-color;
