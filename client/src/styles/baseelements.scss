@@ -68,6 +68,10 @@
           border: 1px solid $secondary-color;
           background: $secondary-color;
         }
+
+        &.active {
+          pointer-events: none;
+        }
       }
     }
   }
