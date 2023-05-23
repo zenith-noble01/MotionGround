@@ -10,7 +10,7 @@ const Code = ({ mode }) => {
   const { annimType, delay, direction, duration, type } = animateContainer;
   const name = useSelector((state) => state.headerName.name);
 
-  console.log(name);
+  // console.log(name);
   const directionOptions = directions.map((direction, index) => (
     <option value={direction.name} key={index}>
       {direction.name}
@@ -36,7 +36,7 @@ const Code = ({ mode }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: ${delay / 1000} } }}
         >
-        
+
           This is a text
 
         </motion.div>
@@ -60,7 +60,7 @@ const Code = ({ mode }) => {
       }, ease: "easeIn" },
           }}
         >
-        
+
           This is a text
 
         </motion.div>
@@ -100,7 +100,7 @@ const Code = ({ mode }) => {
       } },
           }}
         >
-        
+
           This is a text
 
         </motion.div>
@@ -136,7 +136,7 @@ const Code = ({ mode }) => {
       } },
           }}
         >
-        
+
           This is a text
 
         </motion.div>

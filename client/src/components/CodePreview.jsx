@@ -3,16 +3,21 @@ import { saveAs } from "file-saver";
 import "../styles/codepreview.scss";
 import { FaCode, FaFileDownload } from "react-icons/fa";
 import Code from "./Code";
+import { useSelector } from "react-redux";
 
 const CodePreview = ({ mode, setMode }) => {
   const handleBackButtonClick = () => {
     setMode("editor");
   };
 
+  const name = useSelector((state) => state.headerName.name);
+
+  // console.log(name);
+
   const handleDownloadClick = () => {
     const codeBlock = getCodeBlock();
     const blob = new Blob([codeBlock], { type: "text/plain;charset=utf-8" });
-    saveAs(blob, "animation-code.js");
+    saveAs(blob, `${name}.jsx`);
   };
 
   const getCodeBlock = () => {

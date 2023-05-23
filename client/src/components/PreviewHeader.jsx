@@ -43,7 +43,7 @@ const PreviewHeader = ({
     dispatch(setName(formattedName));
   };
 
-  console.log(name);
+  // console.log(name);
 
   return (
     <div className="preview__header">
