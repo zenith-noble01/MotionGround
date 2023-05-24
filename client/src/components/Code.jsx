@@ -164,7 +164,7 @@ const Code = ({ mode }) => {
     }
 
     setCode(code);
-  }, [annimType, delay, direction, duration, type]);
+  }, [annimType, delay, direction, duration, type, name]);
 
   if (mode === "code") {
     return (
@@ -176,4 +176,5 @@ const Code = ({ mode }) => {
     return null;
   }
 };
+
 export default Code;
