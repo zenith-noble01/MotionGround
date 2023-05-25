@@ -53,7 +53,7 @@
         @include flexDirection(column);
         gap: 1rem;
         @include flexCenter;
-        border: 1px solid $p-neutral;
+        border: 1px solid $dark-sm-m;
         border-radius: 5px;
         text-transform: capitalize;
         font-weight: 500;

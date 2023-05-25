@@ -7,8 +7,50 @@
   gap: 1rem;
 
   .customize__content {
-    background: red;
     @include flexDirection(column);
     gap: 0.5rem;
+
+    .customize {
+      border-bottom: 1px solid $dark-sm-m;
+      @include flexDirection(column);
+      gap: 0.5rem;
+      padding-bottom: 0.5rem;
+
+      .customizer {
+        p {
+          @include flexAlign;
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .space__content {
+          @include flexAlign;
+          gap: 1rem;
+
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          input::placeholder {
+            color: $primary-color;
+          }
+          input {
+            max-width: 50px;
+            min-height: 50px;
+            border: none;
+            outline: none;
+            -moz-appearance: textfield;
+            background: none;
+            font-size: 20px;
+            border: 1px solid $dark-sm-m;
+            border-radius: 5px;
+            text-align: center;
+            color: $primary-color;
+          }
+        }
+      }
+    }
   }
 }
