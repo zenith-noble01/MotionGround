@@ -1,0 +1,14 @@
+@import "./constants";
+@import "./variables";
+
+.customize__container {
+  height: 100%;
+  @include flexDirection(column);
+  gap: 1rem;
+
+  .customize__content {
+    background: red;
+    @include flexDirection(column);
+    gap: 0.5rem;
+  }
+}
