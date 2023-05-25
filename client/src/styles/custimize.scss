@@ -51,6 +51,27 @@
           }
         }
       }
+
+      .bg__container {
+        @include flexDirection(column);
+        .selectors {
+          @include flexAlign;
+          border-radius: 5px;
+          overflow: hidden;
+          .selector {
+            background: $dark-sm-m;
+            flex: 1;
+            padding: 0.5rem 0;
+            cursor: pointer;
+            text-align: center;
+            transition: $trans;
+
+            &.active {
+              background: $p-neutral;
+            }
+          }
+        }
+      }
     }
   }
 }
