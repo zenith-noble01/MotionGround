@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { selectAnimateContainer } from "../redux/slice/annimations";
 import { fadeIn, slideIn, textVariant, zoomIn } from "../utils/motion";
+import { useDispatch } from "react-redux";
+import { startDrag, endDrag } from "../redux/slice/baseSlice";
 
 const Preview = () => {
   const [mode, setMode] = useState(() => "editor");
@@ -16,6 +18,8 @@ const Preview = () => {
   const { annimType, delay, duration, direction, type } = animateContainer;
 
   const [useNewAnimation, setUseNewAnimation] = useState(() => false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const motionVariants = () => {
@@ -78,6 +82,21 @@ const Preview = () => {
     // motionVariant,
   ]);
 
+  const handleDragStart = (event, name) => {
+    event.dataTransfer.setData("text/plain", name);
+    dispatch(startDrag(name));
+  };
+
+  const handleDragEnd = () => {
+    dispatch(endDrag());
+  };
+
+  const handleDrop = (event) => {
+    event.preventDefault();
+    const name = event.dataTransfer.getData("text/plain");
+    dispatch(startDrag(name));
+  };
+
   return (
     <div className="playground__preview">
       <div className="preview__container">
@@ -96,6 +115,8 @@ const Preview = () => {
             initial="hidden"
             animate="show"
             variants={motionVariant}
+            onDragStart={(event) => handleDragStart(event, "text")}
+            onDragEnd={handleDragEnd}
           >
             This is a text
           </motion.div>
