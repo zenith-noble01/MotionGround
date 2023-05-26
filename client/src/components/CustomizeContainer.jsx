@@ -92,10 +92,11 @@ const CustomizeContainer = () => {
             {activeSelector === "color" && (
               <div className="color__container">
                 <div className="color__preview">
+                  <input type="color" />
                   <p>hex</p>
                 </div>
                 <div className="color__opacity">
-                  <input type="number" />
+                  <input type="number" max={100} />
                   <span>%</span>
                 </div>
               </div>
