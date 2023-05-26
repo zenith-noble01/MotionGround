@@ -34,3 +34,9 @@ input,
 input::placeholder {
   font-family: $gt;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

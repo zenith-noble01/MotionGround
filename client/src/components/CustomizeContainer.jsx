@@ -19,10 +19,18 @@ const CustomizeContainer = () => {
               <RxPadding /> Padding
             </p>
             <div className="space__content">
-              <input type="number" placeholder="0" />
-              <input type="number" placeholder="0" />
-              <input type="number" placeholder="0" />
-              <input type="number" placeholder="0" />
+              <div className="space">
+                <span>up:</span> <input type="number" placeholder="0" />
+              </div>
+              <div className="space">
+                <span>right:</span> <input type="number" placeholder="0" />
+              </div>
+              <div className="space">
+                <span>bottom:</span> <input type="number" placeholder="0" />
+              </div>
+              <div className="space">
+                <span>left:</span> <input type="number" placeholder="0" />
+              </div>
             </div>
           </div>
           <div className="customizer">
@@ -30,10 +38,18 @@ const CustomizeContainer = () => {
               <RxMargin /> Margin
             </p>
             <div className="space__content">
-              <input type="number" placeholder="u" />
-              <input type="number" placeholder="r" />
-              <input type="number" placeholder="b" />
-              <input type="number" placeholder="l" />
+              <div className="space">
+                <span>up:</span> <input type="number" placeholder="0" />
+              </div>
+              <div className="space">
+                <span>right:</span> <input type="number" placeholder="0" />
+              </div>
+              <div className="space">
+                <span>bottom:</span> <input type="number" placeholder="0" />
+              </div>
+              <div className="space">
+                <span>left:</span> <input type="number" placeholder="0" />
+              </div>
             </div>
           </div>
         </div>
@@ -74,7 +90,15 @@ const CustomizeContainer = () => {
             </div>
             {/* showing elements based on the one they choised */}
             {activeSelector === "color" && (
-              <div className="color__container">colors</div>
+              <div className="color__container">
+                <div className="color__preview">
+                  <p>hex</p>
+                </div>
+                <div className="color__opacity">
+                  <input type="number" />
+                  <span>%</span>
+                </div>
+              </div>
             )}
             {activeSelector === "image" && (
               <div className="image__container">image</div>

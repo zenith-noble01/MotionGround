@@ -25,13 +25,13 @@
         }
 
         .space__content {
-          @include flexAlign;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
           gap: 1rem;
 
-          input::-webkit-outer-spin-button,
-          input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
+          .space {
+            @include flexAlign;
+            gap: 0.5rem;
           }
 
           input::placeholder {
@@ -75,7 +75,30 @@
         }
 
         .color__container {
-          background: blue;
+          @include flexAlign;
+          gap: 1rem;
+          background: red;
+
+          .color__preview {
+            background: black;
+            flex: 1;
+          }
+          .color__opacity {
+            flex: 1;
+            @include flexAlign;
+
+            input {
+              max-width: 100px;
+              border: none;
+              outline: none;
+              -moz-appearance: textfield;
+              background: none;
+              font-size: 20px;
+              border: 1px solid $dark-sm-m;
+              border-radius: 5px;
+              color: $primary-color;
+            }
+          }
         }
       }
     }
