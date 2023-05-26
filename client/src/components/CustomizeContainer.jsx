@@ -11,9 +11,6 @@ const CustomizeContainer = () => {
 
   return (
     <div className="customize__container">
-      <div className="customize__header">
-        <p>Customize your Elements</p>
-      </div>
       <div className="customize__content">
         <div className="customize">
           <div className="header">Spacing</div>
@@ -22,10 +19,10 @@ const CustomizeContainer = () => {
               <RxPadding /> Padding
             </p>
             <div className="space__content">
-              <input type="number" placeholder="u" />
-              <input type="number" placeholder="r" />
-              <input type="number" placeholder="b" />
-              <input type="number" placeholder="l" />
+              <input type="number" placeholder="0" />
+              <input type="number" placeholder="0" />
+              <input type="number" placeholder="0" />
+              <input type="number" placeholder="0" />
             </div>
           </div>
           <div className="customizer">

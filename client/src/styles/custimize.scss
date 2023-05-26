@@ -11,10 +11,11 @@
     gap: 0.5rem;
 
     .customize {
-      border-bottom: 1px solid $dark-sm-m;
+      background: $dark-sm;
       @include flexDirection(column);
       gap: 0.5rem;
-      padding-bottom: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 5px;
 
       .customizer {
         p {
@@ -54,6 +55,7 @@
 
       .bg__container {
         @include flexDirection(column);
+        gap: 1rem;
         .selectors {
           @include flexAlign;
           border-radius: 5px;
@@ -70,6 +72,10 @@
               background: $p-neutral;
             }
           }
+        }
+
+        .color__container {
+          background: blue;
         }
       }
     }
