@@ -5,6 +5,10 @@ import { useState } from "react";
 const CustomizeContainer = () => {
   const [activeSelector, setActiveSelector] = useState("color");
 
+  const [initial, setInitial] = useState("#5e72e4");
+
+  console.log(initial);
+
   const handleSelectorClick = (selector) => {
     setActiveSelector(selector);
   };
@@ -92,8 +96,13 @@ const CustomizeContainer = () => {
             {activeSelector === "color" && (
               <div className="color__container">
                 <div className="color__preview">
-                  <input type="color" />
-                  <p>hex</p>
+                  <input
+                    type="color"
+                    value={initial}
+                    onChange={(e) => setInitial(e.target.value)}
+                    id="color"
+                  />
+                  <p> {initial}</p>
                 </div>
                 <div className="color__opacity">
                   <input type="number" max={100} />
