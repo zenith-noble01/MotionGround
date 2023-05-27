@@ -44,7 +44,7 @@ const CustomizeContainer = () => {
   };
 
   const handleChange = (color) => {
-    setColor(color.rgb);
+    setColor({ ...color.rgb, a: alpha });
     setAlpha(color.rgb.a * 100);
   };
 
