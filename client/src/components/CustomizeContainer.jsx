@@ -8,6 +8,7 @@ import { useCallback } from "react";
 
 const CustomizeContainer = () => {
   const [activeSelector, setActiveSelector] = useState("color");
+  const [file, setFile] = useState(null);
 
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [color, setColor] = useState({ r: "241", g: "112", b: "19", a: "1" });
@@ -143,7 +144,9 @@ const CustomizeContainer = () => {
                 handleChange={handleChange}
               />
             )}
-            {activeSelector === "image" && <ImageContainer />}
+            {activeSelector === "image" && (
+              <ImageContainer file={file} setFile={setFile} />
+            )}
             {activeSelector === "video" && <VidoeContainer />}
           </div>
         </div>
@@ -187,33 +190,40 @@ const ColorContainer = ({
   );
 };
 
-const ImageContainer = ({}) => {
+const ImageContainer = ({ file, setFile }) => {
   const onDrop = useCallback((acceptedFiles) => {
-    // Do something with the files
-    console.log(acceptedFiles);
+    acceptedFiles.forEach((file) => {
+      setFile(file);
+    });
   }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
   });
   return (
     <div className="image__container">
-      <div
-        {...getRootProps()}
-        className={isDragActive ? "active imagedrop" : "imagedrop"}
-      >
-        <input {...getInputProps()} />
-        {isDragActive ? (
-          <p>Drop the files here ...</p>
-        ) : (
-          <div className="dropandbrowse">
-            <p>
-              Drag & drop or <span>browse</span>
-            </p>
+      {file ? (
+        <div className="file__cont">
+          <img src={URL.createObjectURL(file)} alt="" />
+        </div>
+      ) : (
+        <div
+          {...getRootProps()}
+          className={isDragActive ? "active imagedrop" : "imagedrop"}
+        >
+          <input {...getInputProps()} />
+          {isDragActive ? (
+            <p>Drop the files here ...</p>
+          ) : (
+            <div className="dropandbrowse">
+              <p>
+                Drag & drop or <span>browse</span>
+              </p>
 
-            <span>jpg, png, svg or gif</span>
-          </div>
-        )}
-      </div>
+              <span>jpg, png, svg or gif</span>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };
