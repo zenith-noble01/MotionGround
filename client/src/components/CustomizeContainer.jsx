@@ -3,6 +3,8 @@ import "../styles/custimize.scss";
 import { useState } from "react";
 import { SketchPicker } from "react-color";
 import reactCSS from "reactcss";
+import { useDropzone } from "react-dropzone";
+import { useCallback } from "react";
 
 const CustomizeContainer = () => {
   const [activeSelector, setActiveSelector] = useState("color");
@@ -186,8 +188,36 @@ const ColorContainer = ({
 };
 
 const ImageContainer = ({}) => {
-  return <div className="image__container">image</div>;
+  const onDrop = useCallback((acceptedFiles) => {
+    // Do something with the files
+    console.log(acceptedFiles);
+  }, []);
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+  });
+  return (
+    <div className="image__container">
+      <div
+        {...getRootProps()}
+        className={isDragActive ? "active imagedrop" : "imagedrop"}
+      >
+        <input {...getInputProps()} />
+        {isDragActive ? (
+          <p>Drop the files here ...</p>
+        ) : (
+          <div className="dropandbrowse">
+            <p>
+              Drag & drop or <span>browse</span>
+            </p>
+
+            <span>jpg, png, svg or gif</span>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 };
+
 const VidoeContainer = ({}) => {
   return (
     <div className="video__container">
