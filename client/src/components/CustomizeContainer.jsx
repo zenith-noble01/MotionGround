@@ -82,6 +82,7 @@ const CustomizeContainer = () => {
               </div>
             </div>
           </div>
+
           <div className="customizer">
             <p>
               <RxMargin /> Margin
