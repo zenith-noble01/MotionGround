@@ -9,6 +9,7 @@ const CustomizeContainer = () => {
 
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [color, setColor] = useState({ r: "241", g: "112", b: "19", a: "1" });
+  const [alpha, setAlpha] = useState("100");
 
   const styles = reactCSS({
     default: {
@@ -31,12 +32,6 @@ const CustomizeContainer = () => {
         bottom: "150px",
         left: "60%",
       },
-      // cover: {
-      //   position: "fixed",
-      //   top: "0px",
-      //   bottom: "0px",
-      //   left: "0px",
-      // },
     },
   });
 
@@ -50,6 +45,7 @@ const CustomizeContainer = () => {
 
   const handleChange = (color) => {
     setColor(color.rgb);
+    setAlpha(color.rgb.a * 100);
   };
 
   const handleSelectorClick = (selector) => {
@@ -145,11 +141,17 @@ const CustomizeContainer = () => {
                       <SketchPicker color={color} onChange={handleChange} />
                     </div>
                   ) : null}
-                  <p># {hex}</p>
+                  <p>#{hex}</p>
                 </div>
 
                 <div className="color__opacity">
-                  <input type="number" max={100} />
+                  <input
+                    type="number"
+                    style={styles.input}
+                    value={alpha}
+                    onChange={(e) => setAlpha(e.target.value)}
+                  />
+                  <div style={styles.alpha}>{alpha}</div>
                   <span>%</span>
                 </div>
               </div>
