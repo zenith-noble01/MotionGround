@@ -100,12 +100,6 @@ const CustomizeContainer = () => {
             </div>
           </div>
         </div>
-        {/* <div className="customize">
-          <div className="header">Dimensioins</div>
-          <div className="customizer">
-            <div className="x"></div>
-          </div>
-        </div> */}
         <div className="customize">
           <div className="header">Background</div>
           <div className="bg__container">
