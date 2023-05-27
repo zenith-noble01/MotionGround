@@ -1,13 +1,56 @@
 import { RxMargin, RxPadding } from "react-icons/rx";
 import "../styles/custimize.scss";
 import { useState } from "react";
+import { SketchPicker } from "react-color";
+import reactCSS from "reactcss";
 
 const CustomizeContainer = () => {
   const [activeSelector, setActiveSelector] = useState("color");
 
-  const [initial, setInitial] = useState("#5e72e4");
+  const [displayColorPicker, setDisplayColorPicker] = useState(false);
+  const [color, setColor] = useState({ r: "241", g: "112", b: "19", a: "1" });
 
-  console.log(initial);
+  const styles = reactCSS({
+    default: {
+      color: {
+        width: "36px",
+        height: "14px",
+        borderRadius: "2px",
+        background: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
+      },
+      swatch: {
+        borderRadius: "5px",
+        boxShadow: "0 0 0 1px rgba(0,0,0,.1)",
+        display: "inline-block",
+        cursor: "pointer",
+        height: "20px",
+        width: "20px",
+      },
+      popover: {
+        position: "absolute",
+        zIndex: "2",
+      },
+      cover: {
+        position: "fixed",
+        top: "0px",
+        right: "0px",
+        bottom: "0px",
+        left: "0px",
+      },
+    },
+  });
+
+  const handleClick = () => {
+    setDisplayColorPicker(!displayColorPicker);
+  };
+
+  const handleClose = () => {
+    setDisplayColorPicker(false);
+  };
+
+  const handleChange = (color) => {
+    setColor(color.rgb);
+  };
 
   const handleSelectorClick = (selector) => {
     setActiveSelector(selector);
@@ -95,14 +138,16 @@ const CustomizeContainer = () => {
             {/* showing elements based on the one they choised */}
             {activeSelector === "color" && (
               <div className="color__container">
-                <div className="color__preview">
-                  <input
-                    type="color"
-                    value={initial}
-                    onChange={(e) => setInitial(e.target.value)}
-                    id="color"
-                  />
-                  <p> {initial}</p>
+                <div>
+                  <div style={styles.swatch} onClick={handleClick}>
+                    <div style={styles.color} />
+                  </div>
+                  {displayColorPicker ? (
+                    <div style={styles.popover}>
+                      <div style={styles.cover} onClick={handleClose} />
+                      <SketchPicker color={color} onChange={handleChange} />
+                    </div>
+                  ) : null}
                 </div>
                 <div className="color__opacity">
                   <input type="number" max={100} />
