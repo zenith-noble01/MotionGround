@@ -118,6 +118,19 @@
             background: $dark-sm-m;
             border-radius: 5px;
             transition: $trans;
+            text-align: center;
+
+            p {
+              font-size: 1.3rem;
+              span {
+                color: $secondary-color;
+                opacity: 1;
+              }
+            }
+
+            span {
+              opacity: 0.5;
+            }
 
             &.active {
               border: 1px dashed $secondary-color;
