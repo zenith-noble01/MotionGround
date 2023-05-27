@@ -44,7 +44,7 @@ const CustomizeContainer = () => {
   };
 
   const handleChange = (color) => {
-    setColor({ ...color.rgb, a: alpha });
+    setColor(color.rgb);
     setAlpha(color.rgb.a * 100);
   };
 
@@ -130,40 +130,19 @@ const CustomizeContainer = () => {
             </div>
             {/* showing elements based on the one they choised */}
             {activeSelector === "color" && (
-              <div className="color__container">
-                <div className="color__preview">
-                  <div style={styles.swatch} onClick={handleClick}>
-                    <div style={styles.color} />
-                  </div>
-                  {displayColorPicker ? (
-                    <div style={styles.popover}>
-                      <div style={styles.cover} onClick={handleClose} />
-                      <SketchPicker color={color} onChange={handleChange} />
-                    </div>
-                  ) : null}
-                  <p>#{hex}</p>
-                </div>
-
-                <div className="color__opacity">
-                  <input
-                    type="number"
-                    style={styles.input}
-                    value={alpha}
-                    onChange={(e) => setAlpha(e.target.value)}
-                  />
-                  <div style={styles.alpha}>{alpha}</div>
-                  <span>%</span>
-                </div>
-              </div>
+              <ColorContainer
+                color={color}
+                styles={styles}
+                handleClick={handleClick}
+                displayColorPicker={displayColorPicker}
+                hex={hex}
+                alpha={alpha}
+                handleClose={handleClose}
+                handleChange={handleChange}
+              />
             )}
-            {activeSelector === "image" && (
-              <div className="image__container">image</div>
-            )}
-            {activeSelector === "video" && (
-              <div className="video__container">
-                <p>coming soon...</p>
-              </div>
-            )}
+            {activeSelector === "image" && <ImageContainer />}
+            {activeSelector === "video" && <VidoeContainer />}
           </div>
         </div>
       </div>
@@ -172,3 +151,47 @@ const CustomizeContainer = () => {
 };
 
 export default CustomizeContainer;
+
+const ColorContainer = ({
+  color,
+  styles,
+  handleClick,
+  displayColorPicker,
+  hex,
+  alpha,
+  handleClose,
+  handleChange,
+}) => {
+  return (
+    <div className="color__container">
+      <div className="color__preview">
+        <div style={styles.swatch} onClick={handleClick}>
+          <div style={styles.color} />
+        </div>
+        {displayColorPicker ? (
+          <div style={styles.popover}>
+            <div style={styles.cover} onClick={handleClose} />
+            <SketchPicker color={color} onChange={handleChange} />
+          </div>
+        ) : null}
+        <p>#{hex}</p>
+      </div>
+
+      <div className="color__opacity">
+        <p style={styles.alpha}>{alpha}</p>
+        <span>%</span>
+      </div>
+    </div>
+  );
+};
+
+const ImageContainer = ({}) => {
+  return <div className="image__container">image</div>;
+};
+const VidoeContainer = ({}) => {
+  return (
+    <div className="video__container">
+      <p>coming soon...</p>
+    </div>
+  );
+};

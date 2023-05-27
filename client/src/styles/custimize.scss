@@ -100,18 +100,10 @@
           .color__opacity {
             flex: 1;
             @include flexAlign;
-
-            input {
-              max-width: 100px;
-              border: none;
-              outline: none;
-              -moz-appearance: textfield;
-              background: none;
-              font-size: 20px;
-              border: 1px solid $dark-sm-m;
-              border-radius: 5px;
-              color: $primary-color;
-            }
+            @include flexBetween;
+            background: $dark-sm-m;
+            padding: 0.3rem;
+            border-radius: 5px;
           }
         }
       }
