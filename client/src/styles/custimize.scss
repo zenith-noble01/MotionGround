@@ -60,13 +60,22 @@
           @include flexAlign;
           border-radius: 5px;
           overflow: hidden;
+          padding: 0.2rem;
+          background: $dark-sm-m;
           .selector {
-            background: $dark-sm-m;
             flex: 1;
             padding: 0.5rem 0;
             cursor: pointer;
             text-align: center;
             transition: $trans;
+
+            &:first-child {
+              border-radius: 5px 0 0 5px;
+            }
+
+            &:last-child {
+              border-radius: 0 5px 5px 0;
+            }
 
             &.active {
               background: $p-neutral;
