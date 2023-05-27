@@ -5,6 +5,8 @@
   height: 100%;
   @include flexDirection(column);
   gap: 1rem;
+  overflow-y: auto;
+  max-height: 100%;
 
   .customize__content {
     @include flexDirection(column);
@@ -90,26 +92,10 @@
           .color__preview {
             flex: 1;
             @include flexAlign;
-            gap: 1rem;
-
-            #color {
-              -webkit-appearance: none;
-              -moz-appearance: none;
-              appearance: none;
-              width: 40px;
-              height: 40px;
-              background-color: transparent;
-              border: none;
-              cursor: pointer;
-            }
-            #color::-webkit-color-swatch {
-              border-radius: 5px;
-              border: none;
-            }
-            #color::-moz-color-swatch {
-              border-radius: 15px;
-              border: none;
-            }
+            gap: 0.5rem;
+            background: $dark-sm-m;
+            padding: 0.3rem;
+            border-radius: 5px;
           }
           .color__opacity {
             flex: 1;

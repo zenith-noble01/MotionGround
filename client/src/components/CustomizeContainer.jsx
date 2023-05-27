@@ -13,8 +13,8 @@ const CustomizeContainer = () => {
   const styles = reactCSS({
     default: {
       color: {
-        width: "36px",
-        height: "14px",
+        width: "20px",
+        height: "20px",
         borderRadius: "2px",
         background: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
       },
@@ -23,20 +23,20 @@ const CustomizeContainer = () => {
         boxShadow: "0 0 0 1px rgba(0,0,0,.1)",
         display: "inline-block",
         cursor: "pointer",
-        height: "20px",
-        width: "20px",
+        position: "relative",
       },
       popover: {
         position: "absolute",
         zIndex: "2",
+        bottom: "150px",
+        left: "60%",
       },
-      cover: {
-        position: "fixed",
-        top: "0px",
-        right: "0px",
-        bottom: "0px",
-        left: "0px",
-      },
+      // cover: {
+      //   position: "fixed",
+      //   top: "0px",
+      //   bottom: "0px",
+      //   left: "0px",
+      // },
     },
   });
 
@@ -55,6 +55,9 @@ const CustomizeContainer = () => {
   const handleSelectorClick = (selector) => {
     setActiveSelector(selector);
   };
+
+  const hex =
+    color.r.toString(16) + color.g.toString(16) + color.b.toString(16);
 
   return (
     <div className="customize__container">
@@ -132,7 +135,7 @@ const CustomizeContainer = () => {
             {/* showing elements based on the one they choised */}
             {activeSelector === "color" && (
               <div className="color__container">
-                <div>
+                <div className="color__preview">
                   <div style={styles.swatch} onClick={handleClick}>
                     <div style={styles.color} />
                   </div>
@@ -142,7 +145,9 @@ const CustomizeContainer = () => {
                       <SketchPicker color={color} onChange={handleChange} />
                     </div>
                   ) : null}
+                  <p># {hex}</p>
                 </div>
+
                 <div className="color__opacity">
                   <input type="number" max={100} />
                   <span>%</span>
