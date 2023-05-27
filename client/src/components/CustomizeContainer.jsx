@@ -5,6 +5,12 @@ import { SketchPicker } from "react-color";
 import reactCSS from "reactcss";
 import { useDropzone } from "react-dropzone";
 import { useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  updatePadding,
+  updateMargin,
+  updateBackground,
+} from "../redux/slice/customizeSlice";
 
 const CustomizeContainer = () => {
   const [activeSelector, setActiveSelector] = useState("color");

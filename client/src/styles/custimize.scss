@@ -111,7 +111,7 @@
             width: 100%;
           }
           .imagedrop {
-            height: 100px;
+            height: 80px;
             border: 1px dashed rgb(76, 76, 76);
             stroke: #000;
             stroke-width: 2;
@@ -121,6 +121,7 @@
             border-radius: 5px;
             transition: $trans;
             text-align: center;
+            cursor: pointer;
 
             p {
               font-size: 1.3rem;
