@@ -6,7 +6,6 @@
   @include flexDirection(column);
   gap: 1rem;
   padding-right: 0.4rem;
-
   .customize__content {
     @include flexDirection(column);
     gap: 0.5rem;
