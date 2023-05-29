@@ -59,7 +59,7 @@
         .selectors {
           @include flexAlign;
           border-radius: 5px;
-          overflow: hidden;
+          // overflow: hidden;
           padding: 0.2rem;
           background: $dark-sm-m;
           .selector {
@@ -99,6 +99,8 @@
         }
 
         .image__container {
+          @include flexDirection(column);
+          gap: 1rem;
           img {
             width: 100%;
           }
@@ -129,6 +131,53 @@
 
             &.active {
               border: 1px dashed $secondary-color;
+            }
+          }
+
+          .option__container {
+            position: relative;
+            width: 100%;
+            @include flexAlign;
+            gap: 1rem;
+            button {
+              flex: 1;
+              padding: 0.5rem 0;
+              cursor: pointer;
+              text-align: center;
+              transition: $trans;
+              border-radius: 5px;
+
+              &.active {
+                background: $p-neutral;
+              }
+            }
+
+            select {
+              flex: 1;
+              padding: 0.5rem 0;
+            }
+
+            .assets__container {
+              position: absolute;
+              bottom: 0;
+              height: fit-content;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              width: 100%;
+              left: -100px;
+              z-index: 59;
+              gap: 0.5rem;
+              background: $darkest;
+              padding: 1rem;
+              border-radius: 10px;
+
+              .asset {
+                height: 100px;
+                border-radius: 5px;
+                background: rgb(9, 37, 9);
+                @include flexCenter;
+                cursor: pointer;
+              }
             }
           }
         }

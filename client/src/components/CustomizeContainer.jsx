@@ -198,6 +198,10 @@ const ColorContainer = ({
 };
 
 const ImageContainer = ({ file, setFile }) => {
+  const [assets, setAssets] = useState(false);
+
+  console.log(assets);
+
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       setFile(file);
@@ -231,6 +235,24 @@ const ImageContainer = ({ file, setFile }) => {
           )}
         </div>
       )}
+      <div className="option__container">
+        <button onClick={() => setAssets((prev) => !prev)}>Use assets</button>
+        <select>
+          <option value="">Cover</option>
+          <option value="">Contain</option>
+          <option value="">Fit</option>
+        </select>
+
+        {assets && (
+          <div className="assets__container">
+            {[...new Array(6)].map((_, index) => (
+              <div className="asset" key={index}>
+                asset
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
