@@ -6,6 +6,7 @@
   @include flexDirection(column);
   gap: 1rem;
   padding-right: 0.4rem;
+  transition: all $trans;
   .customize__content {
     @include flexDirection(column);
     gap: 0.5rem;
@@ -146,6 +147,10 @@
               text-align: center;
               transition: $trans;
               border-radius: 5px;
+              background: $dark-sm;
+              border: none;
+              cursor: pointer;
+              color: $primary-color;
 
               &.active {
                 background: $p-neutral;
@@ -154,31 +159,53 @@
 
             select {
               flex: 1;
-              padding: 0.5rem 0;
+              padding: 0.5rem;
+              background: $dark-sm;
+              border: none;
+              color: $primary-color;
+              cursor: pointer;
+              option {
+                background: blue;
+              }
             }
 
             .assets__container {
               position: absolute;
-              bottom: 0;
-              height: fit-content;
+              top: 40px;
+              height: 200px;
               display: grid;
               grid-template-columns: 1fr 1fr;
-              width: 100%;
-              left: -100px;
+              overflow-y: scroll;
+              width: 90%;
+              left: 0;
+              right: 0;
+              margin: 0 auto;
               z-index: 59;
               gap: 0.5rem;
-              background: $darkest;
+              background: rgb(38, 38, 38);
               padding: 1rem;
-              border-radius: 10px;
+              border-radius: 8px;
 
               .asset {
                 height: 100px;
                 border-radius: 5px;
-                background: rgb(9, 37, 9);
+                background: rgb(52, 52, 52);
                 @include flexCenter;
                 cursor: pointer;
               }
             }
+          }
+        }
+
+        .video__container {
+          width: 100%;
+          input {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid rgb(52, 52, 52);
+            background: rgb(52, 52, 52);
+            color: $p-neutral;
           }
         }
       }

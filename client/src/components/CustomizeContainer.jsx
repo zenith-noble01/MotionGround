@@ -258,9 +258,22 @@ const ImageContainer = ({ file, setFile }) => {
 };
 
 const VidoeContainer = ({}) => {
+  const [link, setLink] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <div className="video__container">
-      <p>coming soon...</p>
-    </div>
+    <form onSubmit={handleSubmit} className="video__container">
+      <input
+        type="text"
+        onChange={(e) => setLink(e.target.value)}
+        placeholder="Vimeo or youtube video link"
+      />
+      <button type="submit" style={{ display: "none" }}>
+        submit
+      </button>
+    </form>
   );
 };
