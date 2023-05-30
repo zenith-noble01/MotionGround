@@ -4,7 +4,7 @@ import Features from "./landingpage/Features";
 import Templates from "./landingpage/Templates";
 import GetStarted from "./landingpage/GetStarted";
 import Contact from "./landingpage/Contact";
-import LoginRegisterButton from "./CtaButton";
+import LoginRegisterButton from "./landingpage/CtaButton";
 import Loading from "./Loader";
 import ControlPanel from "./controlpanel/ControlPanel";
 import Preview from "./preview/Preview";
@@ -22,6 +22,5 @@ import VideoContainer from "./actionPanel/Customization/Background/VideoContaine
 import ColorContainer from "./actionPanel/Customization/Background/ColorContainer"
 
 export {
-    Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview, ActionPanel, PreviewHeader, BaseElements, LayoutElements, Mini, LoadingAnnimation, AnimateContainer,
-    CustomizeContainer, ImageContainer, VideoContainer, ColorContainer
+    Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview, ActionPanel, PreviewHeader, BaseElements, LayoutElements, Mini, LoadingAnnimation, AnimateContainer, CustomizeContainer, ImageContainer, VideoContainer, ColorContainer
 }
