@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../styles/actionPanel.scss";
-import { AnimateContainer, CustomizeContainer } from "./";
+import "../../styles/actionPanel.scss";
+import { AnimateContainer, CustomizeContainer } from "..";
 
 const ActionPanel = () => {
   const [active, setActive] = useState(false);

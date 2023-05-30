@@ -1,5 +1,5 @@
 import { RxMargin, RxPadding } from "react-icons/rx";
-import "../styles/custimize.scss";
+import "../../../styles/custimize.scss";
 import { useState } from "react";
 import reactCSS from "reactcss";
 import { useSelector, useDispatch } from "react-redux";
@@ -7,8 +7,8 @@ import {
   updatePadding,
   updateMargin,
   updateBackground,
-} from "../../redux/slice/customizeSlice";
-import { ColorContainer, ImageContainer, VideoContainer } from "..";
+} from "../../../redux/slice/customizeSlice";
+import { ColorContainer, ImageContainer, VideoContainer } from "../..";
 
 const CustomizeContainer = () => {
   const [activeSelector, setActiveSelector] = useState("color");

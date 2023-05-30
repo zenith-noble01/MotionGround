@@ -1,9 +1,9 @@
 import "../styles/header.scss";
 import { motion } from "framer-motion";
-import { headerRoutes } from "../constants";
+import { headerRoutes } from "../../constants";
 import { Link } from "react-router-dom";
-import { LoginRegisterButton } from "./";
-import { fadeIn } from "../utils/motion";
+import { LoginRegisterButton } from "..";
+import { fadeIn } from "../../utils/motion";
 
 const Header = () => {
   return (

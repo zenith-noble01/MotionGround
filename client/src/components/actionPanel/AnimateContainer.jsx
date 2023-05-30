@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { annimationTypes, directions, types } from "../constants";
+import { annimationTypes, directions, types } from "../../constants";
 import {
   selectAnimateContainer,
   setAnnimationProperty,
   setAnnimationType,
   resetAnnimations,
-} from "../redux/slice/annimations";
+} from "../../redux/slice/annimations";
 
 const AnimateContainer = () => {
   const dispatch = useDispatch();
