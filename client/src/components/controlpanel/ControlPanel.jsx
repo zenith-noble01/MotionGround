@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../styles/controlPanel.scss";
-import { LayoutElements, BaseElements, Mini } from "./";
+import "../../styles/controlPanel.scss";
+import { LayoutElements, BaseElements, Mini } from "../";
 
 const ControlPanel = () => {
   const [active, setActive] = useState(false);

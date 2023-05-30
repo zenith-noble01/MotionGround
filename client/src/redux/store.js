@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import animateContainerReducer from "./slice/annimations";
 import headerName from "./slice/headerName";
 import customizeSlice from "./slice/customizeSlice";
+import ActionPanelToogleSlice from "./slice/ActionPanelToogleSlice";
 
 export const store = configureStore({
     reducer: {
         animateContainer: animateContainerReducer,
         headerName: headerName,
-        customize: customizeSlice
+        customize: customizeSlice,
+        actionPanel: ActionPanelToogleSlice
     },
 });

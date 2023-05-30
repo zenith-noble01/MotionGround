@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "../styles/baseelements.scss";
-import { baseElements } from "../constants";
+import "../../styles/baseelements.scss";
+import { baseElements } from "../../constants";
 import { BsChevronRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
-import { startDrag, endDrag } from "../redux/slice/baseSlice";
+import { startDrag, endDrag } from "../../redux/slice/baseSlice";
 
 const BaseElements = () => {
   const [isOpen, setIsOpen] = useState(true);
