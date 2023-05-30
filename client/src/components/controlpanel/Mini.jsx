@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/mini.scss";
+import "../../styles/mini.scss";
 import { Link } from "react-router-dom";
-import { user } from "../assets";
+import { user } from "../../assets";
 
 const Mini = () => {
   return (
