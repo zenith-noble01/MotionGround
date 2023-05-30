@@ -1,10 +1,9 @@
 import { useInView } from "react-intersection-observer";
-import { features } from "../constants";
-import "../styles/features.scss";
+import { features } from "../../constants";
+import "../../styles/features.scss";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import { textVariant } from "../utils/motion";
-import { fadeIn } from "../utils/motion";
+import { textVariant, fadeIn } from "../../utils/motion";
 // import { Link } from "react-router-dom";
 
 const Features = () => {

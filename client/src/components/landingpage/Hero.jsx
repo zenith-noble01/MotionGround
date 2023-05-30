@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import "../styles/hero.scss";
+import "../../styles/hero.scss";
 import { Link } from "react-router-dom";
 import { fadeIn } from "../../utils/motion";
 import { useInView } from "react-intersection-observer";

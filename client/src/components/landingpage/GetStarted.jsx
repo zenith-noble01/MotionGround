@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
-import { slideIn, textVariant } from "../utils/motion";
-import "../styles/getStarted.scss";
+import { slideIn, textVariant } from "../../utils/motion";
+import "../../styles/getStarted.scss";
 import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";

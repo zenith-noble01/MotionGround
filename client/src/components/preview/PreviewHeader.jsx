@@ -6,7 +6,7 @@ import {
 } from "react-icons/ai";
 import ContentEditable from "react-contenteditable";
 
-import { setName } from "../redux/slice/headerName";
+import { setName } from "../../redux/slice/headerName";
 
 const PreviewHeader = ({
   mode,

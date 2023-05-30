@@ -1,8 +1,8 @@
 import { motion, useAnimation } from "framer-motion";
-import { slideIn } from "../utils/motion";
+import { slideIn } from "../../utils/motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import "../styles/contact.scss";
+import "../../styles/contact.scss";
 
 const Contact = () => {
   const { ref, inView } = useInView();

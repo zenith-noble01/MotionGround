@@ -1,6 +1,6 @@
 import React from "react";
 import { saveAs } from "file-saver";
-import "../styles/codepreview.scss";
+import "../../styles/codepreview.scss";
 import { FaCode, FaFileDownload } from "react-icons/fa";
 import Code from "./Code";
 import { useSelector } from "react-redux";

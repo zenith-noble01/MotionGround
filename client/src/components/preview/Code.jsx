@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { selectAnimateContainer } from "../redux/slice/annimations";
-import { directions, types } from "../constants";
+import { selectAnimateContainer } from "../../redux/slice/annimations";
+import { directions, types } from "../../constants";
 
 const Code = ({ mode }) => {
   const [code, setCode] = useState(() => "");

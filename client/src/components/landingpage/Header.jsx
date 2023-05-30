@@ -1,4 +1,4 @@
-import "../styles/header.scss";
+import "../../styles/header.scss";
 import { motion } from "framer-motion";
 import { headerRoutes } from "../../constants";
 import { Link } from "react-router-dom";

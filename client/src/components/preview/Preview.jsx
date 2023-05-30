@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import "../styles/preview.scss";
-import { CodePreview, PreviewHeader } from "./";
+import "../../styles/preview.scss";
+import { CodePreview, PreviewHeader } from "../";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
-import { selectAnimateContainer } from "../redux/slice/annimations";
-import { fadeIn, slideIn, textVariant, zoomIn } from "../utils/motion";
+import { selectAnimateContainer } from "../../redux/slice/annimations";
+import { fadeIn, slideIn, textVariant, zoomIn } from "../../utils/motion";
 import { useDispatch } from "react-redux";
-import { startDrag, endDrag } from "../redux/slice/baseSlice";
+import { startDrag, endDrag } from "../../redux/slice/baseSlice";
 
 const Preview = () => {
   const [mode, setMode] = useState(() => "editor");
