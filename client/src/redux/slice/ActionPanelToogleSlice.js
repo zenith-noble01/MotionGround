@@ -1,7 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    activeComponent: "animate",
+    animate: {
+        active: false,
+        data: {},
+    },
+    customize: {
+        active: false,
+        data: {},
+    },
 };
 
 const slice = createSlice({
@@ -9,7 +16,11 @@ const slice = createSlice({
     initialState,
     reducers: {
         toggleComponent: (state, action) => {
-            state.activeComponent = action.payload;
+            const { component, data } = action.payload;
+            state[component] = {
+                active: !state[component].active,
+                data,
+            };
         },
     },
 });
