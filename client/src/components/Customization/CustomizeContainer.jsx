@@ -7,8 +7,8 @@ import {
   updatePadding,
   updateMargin,
   updateBackground,
-} from "../redux/slice/customizeSlice";
-import { ColorContainer, ImageContainer, VideoContainer } from "./";
+} from "../../redux/slice/customizeSlice";
+import { ColorContainer, ImageContainer, VideoContainer } from "..";
 
 const CustomizeContainer = () => {
   const [activeSelector, setActiveSelector] = useState("color");
@@ -130,7 +130,6 @@ const CustomizeContainer = () => {
               </div>
             </div>
           </div>
-
           <div className="customizer">
             <p>
               <RxMargin /> Margin
