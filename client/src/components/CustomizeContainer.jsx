@@ -1,15 +1,14 @@
 import { RxMargin, RxPadding } from "react-icons/rx";
 import "../styles/custimize.scss";
 import { useState } from "react";
-import { SketchPicker } from "react-color";
 import reactCSS from "reactcss";
-import { useDropzone } from "react-dropzone";
 import { useSelector, useDispatch } from "react-redux";
 import {
   updatePadding,
   updateMargin,
   updateBackground,
 } from "../redux/slice/customizeSlice";
+import { ColorContainer, ImageContainer, VideoContainer } from "./";
 
 const CustomizeContainer = () => {
   const [activeSelector, setActiveSelector] = useState("color");
@@ -221,7 +220,7 @@ const CustomizeContainer = () => {
             {activeSelector === "image" && (
               <ImageContainer file={file} setFile={setFile} />
             )}
-            {activeSelector === "video" && <VidoeContainer />}
+            {activeSelector === "video" && <VideoContainer />}
           </div>
         </div>
       </div>

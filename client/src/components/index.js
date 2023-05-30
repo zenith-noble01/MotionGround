@@ -17,8 +17,11 @@ import Mini from "./Mini";
 import LoadingAnnimation from "./LoadingAnnimatio"
 import AnimateContainer from "./AnimateContainer"
 import CustomizeContainer from "./CustomizeContainer"
+import ImageContainer from "./Background/ImageContainer"
+import VideoContainer from "./Background/VideoContainer"
+import ColorContainer from "./Background/ColorContainer"
 
 export {
     Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview, ActionPanel, PreviewHeader, BaseElements, LayoutElements, Mini, LoadingAnnimation, AnimateContainer,
-    CustomizeContainer
+    CustomizeContainer, ImageContainer, VideoContainer, ColorContainer
 }

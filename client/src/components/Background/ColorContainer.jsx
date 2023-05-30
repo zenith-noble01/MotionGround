@@ -1,3 +1,5 @@
+import { SketchPicker } from "react-color";
+
 const ColorContainer = ({
   color,
   styles,
