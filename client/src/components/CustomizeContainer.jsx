@@ -4,7 +4,6 @@ import { useState } from "react";
 import { SketchPicker } from "react-color";
 import reactCSS from "reactcss";
 import { useDropzone } from "react-dropzone";
-import { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   updatePadding,
@@ -64,6 +63,26 @@ const CustomizeContainer = () => {
   const hex =
     color.r.toString(16) + color.g.toString(16) + color.b.toString(16);
 
+  const dispatch = useDispatch();
+  const padding = useSelector((state) => state.customize.padding);
+  const margin = useSelector((state) => state.customize.margin);
+  const background = useSelector((state) => state.customize.background);
+
+  const handlePaddingChange = (event) => {
+    const { name, value } = event.target;
+    dispatch(updatePadding({ ...padding, [name]: value }));
+  };
+
+  const handleMarginChange = (event) => {
+    const { name, value } = event.target;
+    dispatch(updateMargin({ ...margin, [name]: value }));
+  };
+
+  const handleBackgroundChange = (event) => {
+    const { name, value } = event.target;
+    dispatch(updateBackground({ ...background, [name]: value }));
+  };
+
   return (
     <div className="customize__container">
       <div className="customize__content">
@@ -75,16 +94,40 @@ const CustomizeContainer = () => {
             </p>
             <div className="space__content">
               <div className="space">
-                <span>up:</span> <input type="number" placeholder="0" />
+                <span>up:</span>{" "}
+                <input
+                  type="number"
+                  name="top"
+                  value={padding.top}
+                  onChange={handlePaddingChange}
+                />
               </div>
               <div className="space">
-                <span>right:</span> <input type="number" placeholder="0" />
+                <span>right:</span>{" "}
+                <input
+                  type="number"
+                  name="right"
+                  value={padding.right}
+                  onChange={handlePaddingChange}
+                />
               </div>
               <div className="space">
-                <span>bottom:</span> <input type="number" placeholder="0" />
+                <span>bottom:</span>{" "}
+                <input
+                  type="number"
+                  name="bottom"
+                  value={padding.bottom}
+                  onChange={handlePaddingChange}
+                />
               </div>
               <div className="space">
-                <span>left:</span> <input type="number" placeholder="0" />
+                <span>left:</span>{" "}
+                <input
+                  type="number"
+                  name="left"
+                  value={padding.left}
+                  onChange={handlePaddingChange}
+                />
               </div>
             </div>
           </div>
@@ -95,16 +138,40 @@ const CustomizeContainer = () => {
             </p>
             <div className="space__content">
               <div className="space">
-                <span>up:</span> <input type="number" placeholder="0" />
+                <span>up:</span>{" "}
+                <input
+                  type="number"
+                  name="top"
+                  value={margin.top}
+                  onChange={handleMarginChange}
+                />
               </div>
               <div className="space">
-                <span>right:</span> <input type="number" placeholder="0" />
+                <span>right:</span>{" "}
+                <input
+                  type="number"
+                  name="right"
+                  value={margin.right}
+                  onChange={handleMarginChange}
+                />
               </div>
               <div className="space">
-                <span>bottom:</span> <input type="number" placeholder="0" />
+                <span>bottom:</span>{" "}
+                <input
+                  type="number"
+                  name="bottom"
+                  value={margin.bottom}
+                  onChange={handleMarginChange}
+                />
               </div>
               <div className="space">
-                <span>left:</span> <input type="number" placeholder="0" />
+                <span>left:</span>{" "}
+                <input
+                  type="number"
+                  name="left"
+                  value={margin.left}
+                  onChange={handleMarginChange}
+                />
               </div>
             </div>
           </div>
@@ -200,16 +267,14 @@ const ColorContainer = ({
 const ImageContainer = ({ file, setFile }) => {
   const [assets, setAssets] = useState(false);
 
-  console.log(assets);
-
-  const onDrop = useCallback((acceptedFiles) => {
-    acceptedFiles.forEach((file) => {
-      setFile(file);
-    });
-  }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
+    onDrop: (acceptedFiles) => {
+      acceptedFiles.forEach((file) => {
+        setFile(file);
+      });
+    },
   });
+
   return (
     <div className="image__container">
       {file ? (
@@ -221,7 +286,7 @@ const ImageContainer = ({ file, setFile }) => {
           {...getRootProps()}
           className={isDragActive ? "active imagedrop" : "imagedrop"}
         >
-          <input {...getInputProps()} />
+          <input {...getInputProps()} accept=".jpg,.png,.svg,.gif" />
           {isDragActive ? (
             <p>Drop the files here ...</p>
           ) : (
@@ -262,6 +327,7 @@ const VidoeContainer = ({}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(link);
   };
 
   return (

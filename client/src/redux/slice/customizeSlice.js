@@ -14,7 +14,6 @@ const initialState = {
         left: 0,
     },
     background: {
-        type: "color",
         color: {
             r: 241,
             g: 112,
