@@ -2,6 +2,7 @@ import React from "react";
 import { RxPadding } from "react-icons/rx";
 import { updatePadding } from "../../../redux/slice/customizeSlice";
 import { useDispatch, useSelector } from "react-redux";
+import "../../../styles/padding.scss";
 
 const Padding = () => {
   const dispatch = useDispatch();
@@ -10,19 +11,13 @@ const Padding = () => {
 
   const handlePaddingChange = (event) => {
     const { name, value } = event.target;
-    dispatch(
-      updatePadding({ ...padding, [name]: value === "" ? "" : parseInt(value) })
-    );
+    dispatch(updatePadding({ ...padding, [name]: parseInt(value) }));
   };
 
   return (
     <div className="customizer">
-      <p>
-        <RxPadding /> Padding
-      </p>
-      <div className="space__content">
-        <div className="space">
-          <span>up:</span>{" "}
+      <div className="padding__container">
+        <div className="input__container">
           <input
             type="number"
             placeholder="0"
@@ -30,9 +25,9 @@ const Padding = () => {
             value={padding.top}
             onChange={handlePaddingChange}
           />
+          <span></span>
         </div>
-        <div className="space">
-          <span>right:</span>{" "}
+        <div className="input__container">
           <input
             type="number"
             placeholder="0"
@@ -40,9 +35,9 @@ const Padding = () => {
             value={padding.right}
             onChange={handlePaddingChange}
           />
+          <span></span>
         </div>
-        <div className="space">
-          <span>bottom:</span>{" "}
+        <div className="input__container">
           <input
             type="number"
             placeholder="0"
@@ -50,9 +45,9 @@ const Padding = () => {
             value={padding.bottom}
             onChange={handlePaddingChange}
           />
+          <span></span>
         </div>
-        <div className="space">
-          <span>left:</span>{" "}
+        <div className="input__container">
           <input
             type="number"
             placeholder="0"
@@ -60,7 +55,9 @@ const Padding = () => {
             value={padding.left}
             onChange={handlePaddingChange}
           />
+          <span></span>
         </div>
+        Padding
       </div>
     </div>
   );

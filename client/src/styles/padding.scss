@@ -1,0 +1,85 @@
+@import "./variables";
+@import "./constants";
+
+.padding__container {
+  position: relative;
+  height: 200px;
+  @include flexCenter;
+  font-weight: bold;
+
+  .input__container {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+
+    input {
+      max-width: 50px;
+      min-height: 50px;
+      border: none;
+      outline: none;
+      -moz-appearance: textfield;
+      background: none;
+      font-size: 20px;
+      border-radius: 5px;
+      text-align: center;
+      color: $primary-color;
+      border: 1px solid $dark-sm-m;
+
+      &:focus + span {
+        background: $secondary-color;
+      }
+    }
+    span {
+      height: 2px;
+      width: 70px;
+      background: $dark-sm-m;
+      position: absolute;
+      transition: $trans;
+    }
+
+    &:nth-child(1) {
+      right: 0;
+      top: 10px;
+      left: 0;
+      margin: 0 auto;
+
+      span {
+        top: -6px;
+        left: -10px;
+        height: 2px;
+      }
+    }
+    &:nth-child(2) {
+      right: 10px;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      span {
+        right: -40px;
+        bottom: 25px;
+        transform: rotate(90deg);
+      }
+    }
+    &:nth-child(3) {
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      span {
+        bottom: -5px;
+        left: -10px;
+      }
+    }
+    &:nth-child(4) {
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      span {
+        left: -40px;
+        bottom: 25px;
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
