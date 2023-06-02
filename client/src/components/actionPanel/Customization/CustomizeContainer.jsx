@@ -3,7 +3,6 @@ import "../../../styles/custimize.scss";
 import { useState } from "react";
 import reactCSS from "reactcss";
 import { useSelector, useDispatch } from "react-redux";
-import { updateBackground } from "../../../redux/slice/customizeSlice";
 import {
   ColorContainer,
   ImageContainer,
@@ -11,14 +10,16 @@ import {
   Padding,
   VideoContainer,
 } from "../..";
+import { setColor } from "../../../redux/slice/ColorSlice";
 
 const CustomizeContainer = () => {
   const [activeSelector, setActiveSelector] = useState("color");
   const [file, setFile] = useState(null);
 
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
-  const [color, setColor] = useState({ r: "241", g: "112", b: "19", a: "1" });
-  const [alpha, setAlpha] = useState("100");
+  const { color } = useSelector((state) => state.bgColor);
+
+  const dispatch = useDispatch();
 
   const styles = reactCSS({
     default: {
@@ -52,24 +53,12 @@ const CustomizeContainer = () => {
     setDisplayColorPicker(false);
   };
 
-  const handleChange = (color) => {
-    setColor(color.rgb);
-    setAlpha(color.rgb.a * 100);
+  const handleChange = ({ r, g, b, a }) => {
+    dispatch(setColor({ r, g, b, a }));
   };
 
   const handleSelectorClick = (selector) => {
     setActiveSelector(selector);
-  };
-
-  const hex =
-    color.r.toString(16) + color.g.toString(16) + color.b.toString(16);
-
-  const dispatch = useDispatch();
-  const background = useSelector((state) => state.customize.background);
-
-  const handleBackgroundChange = (event) => {
-    const { name, value } = event.target;
-    dispatch(updateBackground({ ...background, [name]: value }));
   };
 
   return (
@@ -112,12 +101,10 @@ const CustomizeContainer = () => {
             {/* showing elements based on the one they choised */}
             {activeSelector === "color" && (
               <ColorContainer
-                color={color}
                 styles={styles}
                 handleClick={handleClick}
                 displayColorPicker={displayColorPicker}
-                hex={hex}
-                alpha={alpha}
+                alpha={color.a}
                 handleClose={handleClose}
                 handleChange={handleChange}
               />

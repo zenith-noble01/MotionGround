@@ -2,16 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     padding: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
+        top: "",
+        right: "",
+        bottom: "",
+        left: "",
     },
     margin: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
+        top: "",
+        right: "",
+        bottom: "",
+        left: "",
     },
     background: {
         color: {

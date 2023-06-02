@@ -21,6 +21,11 @@ const Preview = () => {
 
   const dispatch = useDispatch();
 
+  const { margin, padding } = useSelector((state) => state.customize);
+  const { hex } = useSelector((state) => state.bgColor);
+
+  console.log(padding);
+
   useEffect(() => {
     const motionVariants = () => {
       if (useNewAnimation) {
@@ -117,6 +122,17 @@ const Preview = () => {
             variants={motionVariant}
             onDragStart={(event) => handleDragStart(event, "text")}
             onDragEnd={handleDragEnd}
+            style={{
+              paddingTop: padding.top === "" ? 0 : padding.top,
+              paddingRight: padding.right === "" ? 0 : padding.right,
+              paddingBottom: padding.bottom === "" ? 0 : padding.bottom,
+              paddingLeft: padding.left === "" ? 0 : padding.left,
+              marginTop: margin.top === "" ? 0 : margin.top,
+              marginRight: margin.right === "" ? 0 : margin.right,
+              marginBottom: margin.bottom === "" ? 0 : margin.bottom,
+              marginLeft: margin.left === "" ? 0 : margin.left,
+              background: `#${hex}`,
+            }}
           >
             This is a text
           </motion.div>

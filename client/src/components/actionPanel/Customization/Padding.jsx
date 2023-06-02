@@ -10,8 +10,11 @@ const Padding = () => {
 
   const handlePaddingChange = (event) => {
     const { name, value } = event.target;
-    dispatch(updatePadding({ ...padding, [name]: value }));
+    dispatch(
+      updatePadding({ ...padding, [name]: value === "" ? "" : parseInt(value) })
+    );
   };
+
   return (
     <div className="customizer">
       <p>
@@ -22,6 +25,7 @@ const Padding = () => {
           <span>up:</span>{" "}
           <input
             type="number"
+            placeholder="0"
             name="top"
             value={padding.top}
             onChange={handlePaddingChange}
@@ -31,6 +35,7 @@ const Padding = () => {
           <span>right:</span>{" "}
           <input
             type="number"
+            placeholder="0"
             name="right"
             value={padding.right}
             onChange={handlePaddingChange}
@@ -40,6 +45,7 @@ const Padding = () => {
           <span>bottom:</span>{" "}
           <input
             type="number"
+            placeholder="0"
             name="bottom"
             value={padding.bottom}
             onChange={handlePaddingChange}
@@ -49,6 +55,7 @@ const Padding = () => {
           <span>left:</span>{" "}
           <input
             type="number"
+            placeholder="0"
             name="left"
             value={padding.left}
             onChange={handlePaddingChange}

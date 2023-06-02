@@ -10,10 +10,10 @@ const Margin = () => {
 
   const handleMarginChange = (event) => {
     const { name, value } = event.target;
-    dispatch(updateMargin({ ...margin, [name]: value }));
+    dispatch(updateMargin({ ...margin, [name]: parseInt(value) }));
   };
 
-  console.log(margin);
+  // console.log(margin);
   return (
     <div className="customizer">
       <p>
@@ -24,6 +24,7 @@ const Margin = () => {
           <span>up:</span>{" "}
           <input
             type="number"
+            placeholder="0"
             name="top"
             value={margin.top}
             onChange={handleMarginChange}
@@ -33,6 +34,7 @@ const Margin = () => {
           <span>right:</span>{" "}
           <input
             type="number"
+            placeholder="0"
             name="right"
             value={margin.right}
             onChange={handleMarginChange}
@@ -42,6 +44,7 @@ const Margin = () => {
           <span>bottom:</span>{" "}
           <input
             type="number"
+            placeholder="0"
             name="bottom"
             value={margin.bottom}
             onChange={handleMarginChange}
@@ -51,6 +54,7 @@ const Margin = () => {
           <span>left:</span>{" "}
           <input
             type="number"
+            placeholder="0"
             name="left"
             value={margin.left}
             onChange={handleMarginChange}
