@@ -24,8 +24,6 @@ const Preview = () => {
   const { margin, padding } = useSelector((state) => state.customize);
   const { color } = useSelector((state) => state.bgColor);
 
-  console.log(padding);
-
   useEffect(() => {
     const motionVariants = () => {
       if (useNewAnimation) {

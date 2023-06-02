@@ -32,8 +32,6 @@ const ColorContainer = ({
     dispatch(updateHex({ hex }));
   };
 
-  console.log(hex);
-
   return (
     <div className="color__container">
       <div className="color__preview">
