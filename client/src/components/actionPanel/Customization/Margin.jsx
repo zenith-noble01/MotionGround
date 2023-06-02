@@ -1,7 +1,7 @@
 import React from "react";
-import { RxMargin } from "react-icons/rx";
 import { updateMargin } from "../../../redux/slice/customizeSlice";
 import { useDispatch, useSelector } from "react-redux";
+import "../../../styles/margin.scss";
 
 const Margin = () => {
   const dispatch = useDispatch();
@@ -16,12 +16,8 @@ const Margin = () => {
   // console.log(margin);
   return (
     <div className="customizer">
-      <p>
-        <RxMargin /> Margin
-      </p>
-      <div className="space__content">
-        <div className="space">
-          <span>up:</span>{" "}
+      <div className="margin__container">
+        <div className="input__container">
           <input
             type="number"
             placeholder="0"
@@ -29,9 +25,9 @@ const Margin = () => {
             value={margin.top}
             onChange={handleMarginChange}
           />
+          <span></span>
         </div>
-        <div className="space">
-          <span>right:</span>{" "}
+        <div className="input__container">
           <input
             type="number"
             placeholder="0"
@@ -39,9 +35,9 @@ const Margin = () => {
             value={margin.right}
             onChange={handleMarginChange}
           />
+          <span></span>
         </div>
-        <div className="space">
-          <span>bottom:</span>{" "}
+        <div className="input__container">
           <input
             type="number"
             placeholder="0"
@@ -49,9 +45,9 @@ const Margin = () => {
             value={margin.bottom}
             onChange={handleMarginChange}
           />
+          <span></span>
         </div>
-        <div className="space">
-          <span>left:</span>{" "}
+        <div className="input__container">
           <input
             type="number"
             placeholder="0"
@@ -59,7 +55,9 @@ const Margin = () => {
             value={margin.left}
             onChange={handleMarginChange}
           />
+          <span></span>
         </div>
+        Margin
       </div>
     </div>
   );
