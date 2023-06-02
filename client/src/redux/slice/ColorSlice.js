@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     color: {
-        r: 0,
-        g: 0,
-        b: 0,
+        r: 222,
+        g: 222,
+        b: 222,
         a: 1,
     },
-    hex: "000",
+    hex: "dedede",
 };
 
 const ColorSlice = createSlice({

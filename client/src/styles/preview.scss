@@ -12,6 +12,7 @@
     overflow: auto;
     @include flexDirection(column);
     gap: 1rem;
+    padding-bottom: 6rem;
 
     .preview__header {
       background: $darkest;

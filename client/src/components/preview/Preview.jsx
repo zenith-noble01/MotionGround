@@ -22,7 +22,7 @@ const Preview = () => {
   const dispatch = useDispatch();
 
   const { margin, padding } = useSelector((state) => state.customize);
-  const { hex } = useSelector((state) => state.bgColor);
+  const { color } = useSelector((state) => state.bgColor);
 
   console.log(padding);
 
@@ -123,15 +123,9 @@ const Preview = () => {
             onDragStart={(event) => handleDragStart(event, "text")}
             onDragEnd={handleDragEnd}
             style={{
-              paddingTop: padding.top === "" ? 0 : padding.top,
-              paddingRight: padding.right === "" ? 0 : padding.right,
-              paddingBottom: padding.bottom === "" ? 0 : padding.bottom,
-              paddingLeft: padding.left === "" ? 0 : padding.left,
-              marginTop: margin.top === "" ? 0 : margin.top,
-              marginRight: margin.right === "" ? 0 : margin.right,
-              marginBottom: margin.bottom === "" ? 0 : margin.bottom,
-              marginLeft: margin.left === "" ? 0 : margin.left,
-              background: `#${hex}`,
+              padding: `${padding.top}px ${padding.right}px ${padding.bottom}px ${padding.left}px`,
+              margin: `${margin.top}px ${margin.right}px ${margin.bottom}px ${margin.left}px`,
+              background: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
             }}
           >
             This is a text
