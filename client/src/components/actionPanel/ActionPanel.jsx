@@ -4,6 +4,12 @@ import { AnimateContainer, CustomizeContainer } from "../";
 
 const ActionPanel = () => {
   const [active, setActive] = useState(false);
+  const [data, setData] = useState([]);
+
+  const handleDataChange = (newData) => {
+    setData(newData);
+  };
+
   return (
     <div className="playground__actionPanel">
       <div className="actionpanel__container">
@@ -22,8 +28,12 @@ const ActionPanel = () => {
           </button>
         </div>
         <div className="wrapper">
-          {!active && <AnimateContainer />}
-          {active && <CustomizeContainer />}
+          {!active && (
+            <AnimateContainer data={data} onDataChange={handleDataChange} />
+          )}
+          {active && (
+            <CustomizeContainer data={data} onDataChange={handleDataChange} />
+          )}
         </div>
       </div>
     </div>

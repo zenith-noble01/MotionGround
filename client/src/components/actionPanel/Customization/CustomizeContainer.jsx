@@ -1,14 +1,16 @@
-import { RxMargin, RxPadding } from "react-icons/rx";
+import { RxMargin } from "react-icons/rx";
 import "../../../styles/custimize.scss";
 import { useState } from "react";
 import reactCSS from "reactcss";
 import { useSelector, useDispatch } from "react-redux";
+import { updateBackground } from "../../../redux/slice/customizeSlice";
 import {
-  updatePadding,
-  updateMargin,
-  updateBackground,
-} from "../../../redux/slice/customizeSlice";
-import { ColorContainer, ImageContainer, VideoContainer } from "../..";
+  ColorContainer,
+  ImageContainer,
+  Margin,
+  Padding,
+  VideoContainer,
+} from "../..";
 
 const CustomizeContainer = () => {
   const [activeSelector, setActiveSelector] = useState("color");
@@ -63,19 +65,7 @@ const CustomizeContainer = () => {
     color.r.toString(16) + color.g.toString(16) + color.b.toString(16);
 
   const dispatch = useDispatch();
-  const padding = useSelector((state) => state.customize.padding);
-  const margin = useSelector((state) => state.customize.margin);
   const background = useSelector((state) => state.customize.background);
-
-  const handlePaddingChange = (event) => {
-    const { name, value } = event.target;
-    dispatch(updatePadding({ ...padding, [name]: value }));
-  };
-
-  const handleMarginChange = (event) => {
-    const { name, value } = event.target;
-    dispatch(updateMargin({ ...margin, [name]: value }));
-  };
 
   const handleBackgroundChange = (event) => {
     const { name, value } = event.target;
@@ -87,92 +77,8 @@ const CustomizeContainer = () => {
       <div className="customize__content">
         <div className="customize">
           <div className="header">Spacing</div>
-          <div className="customizer">
-            <p>
-              <RxPadding /> Padding
-            </p>
-            <div className="space__content">
-              <div className="space">
-                <span>up:</span>{" "}
-                <input
-                  type="number"
-                  name="top"
-                  value={padding.top}
-                  onChange={handlePaddingChange}
-                />
-              </div>
-              <div className="space">
-                <span>right:</span>{" "}
-                <input
-                  type="number"
-                  name="right"
-                  value={padding.right}
-                  onChange={handlePaddingChange}
-                />
-              </div>
-              <div className="space">
-                <span>bottom:</span>{" "}
-                <input
-                  type="number"
-                  name="bottom"
-                  value={padding.bottom}
-                  onChange={handlePaddingChange}
-                />
-              </div>
-              <div className="space">
-                <span>left:</span>{" "}
-                <input
-                  type="number"
-                  name="left"
-                  value={padding.left}
-                  onChange={handlePaddingChange}
-                />
-              </div>
-            </div>
-          </div>
-          <div className="customizer">
-            <p>
-              <RxMargin /> Margin
-            </p>
-            <div className="space__content">
-              <div className="space">
-                <span>up:</span>{" "}
-                <input
-                  type="number"
-                  name="top"
-                  value={margin.top}
-                  onChange={handleMarginChange}
-                />
-              </div>
-              <div className="space">
-                <span>right:</span>{" "}
-                <input
-                  type="number"
-                  name="right"
-                  value={margin.right}
-                  onChange={handleMarginChange}
-                />
-              </div>
-              <div className="space">
-                <span>bottom:</span>{" "}
-                <input
-                  type="number"
-                  name="bottom"
-                  value={margin.bottom}
-                  onChange={handleMarginChange}
-                />
-              </div>
-              <div className="space">
-                <span>left:</span>{" "}
-                <input
-                  type="number"
-                  name="left"
-                  value={margin.left}
-                  onChange={handleMarginChange}
-                />
-              </div>
-            </div>
-          </div>
+          <Padding />
+          <Margin />
         </div>
         <div className="customize">
           <div className="header">Background</div>
