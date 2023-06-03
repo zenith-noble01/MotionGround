@@ -82,6 +82,7 @@ const CustomizeContainer = () => {
             }}
           >
             <Padding />
+            <div className="line" />
             <Margin />
           </motion.div>
         </div>

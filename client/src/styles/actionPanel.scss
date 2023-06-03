@@ -6,6 +6,11 @@
   background: $darkest;
   padding: 1rem;
 
+  .line {
+    height: 1px;
+    background: $dark-sm-m;
+  }
+
   .actionpanel__container {
     height: 100%;
     @include flexDirection(column);
@@ -17,17 +22,19 @@
       border-radius: 5px;
       overflow: hidden;
       width: 100%;
+      z-index: 10;
       // padding-bottom: 1rem;
 
       button {
         background: none;
         border: none;
-        padding: 0.7rem 1rem;
+        padding: 0 1rem;
         transition: $trans;
         cursor: pointer;
         color: $primary-color;
         font-weight: bold;
         width: 50%;
+        min-height: 40px;
 
         &.active {
           background: $secondary-color;
