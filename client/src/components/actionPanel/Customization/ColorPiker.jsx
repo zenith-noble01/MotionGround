@@ -66,9 +66,6 @@ const ColorPiker = () => {
     setDisplayColorPicker(false);
   };
 
-  const { textColor } = useSelector((state) => state.textColor);
-  console.log(textColor);
-
   const alpha = color.a;
 
   return (

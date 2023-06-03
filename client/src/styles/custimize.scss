@@ -2,7 +2,7 @@
 @import "./variables";
 
 .customize__container {
-  height: 100%;
+  min-height: 70vh;
   @include flexDirection(column);
   gap: 1rem;
   padding-right: 0.4rem;
@@ -18,7 +18,11 @@
       padding: 0.5rem;
       border-radius: 5px;
       transition: $trans;
-      overflow: hidden;
+      // overflow: hidden;
+
+      &:nth-child(1) {
+        overflow: hidden;
+      }
 
       &.open {
         height: fit-content;
@@ -219,7 +223,7 @@
               margin: 0 auto;
               z-index: 59;
               gap: 0.5rem;
-              background: rgb(38, 38, 38);
+              background: rgb(44, 44, 44);
               padding: 1rem;
               border-radius: 8px;
 
