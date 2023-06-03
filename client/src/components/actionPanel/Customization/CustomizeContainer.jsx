@@ -5,16 +5,20 @@ import reactCSS from "reactcss";
 import { useSelector, useDispatch } from "react-redux";
 import {
   ColorContainer,
+  ColorPiker,
   ImageContainer,
   Margin,
   Padding,
   VideoContainer,
 } from "../..";
 import { setColor } from "../../../redux/slice/ColorSlice";
+import { BsChevronRight } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const CustomizeContainer = () => {
   const [activeSelector, setActiveSelector] = useState("color");
   const [file, setFile] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const { color } = useSelector((state) => state.bgColor);
@@ -64,10 +68,26 @@ const CustomizeContainer = () => {
   return (
     <div className="customize__container">
       <div className="customize__content">
+        <div className={isOpen ? "customize" : "customize open"}>
+          <div className="header" onClick={() => setIsOpen((prev) => !prev)}>
+            Spacing
+            <BsChevronRight className={`rotate-icon ${isOpen ? "open" : ""}`} />
+          </div>
+          <motion.div
+            initial="closed"
+            animate={isOpen ? "open" : "closed"}
+            variants={{
+              open: { height: "auto" },
+              closed: { height: 0 },
+            }}
+          >
+            <Padding />
+            <Margin />
+          </motion.div>
+        </div>
         <div className="customize">
-          <div className="header">Spacing</div>
-          <Padding />
-          <Margin />
+          <div className="header">Color</div>
+          <ColorPiker />
         </div>
         <div className="customize">
           <div className="header">Background</div>

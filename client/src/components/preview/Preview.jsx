@@ -23,6 +23,7 @@ const Preview = () => {
 
   const { margin, padding } = useSelector((state) => state.customize);
   const { color } = useSelector((state) => state.bgColor);
+  const { textHex } = useSelector((state) => state.textColor);
 
   useEffect(() => {
     const motionVariants = () => {
@@ -124,6 +125,7 @@ const Preview = () => {
               padding: `${padding.top}px ${padding.right}px ${padding.bottom}px ${padding.left}px`,
               margin: `${margin.top}px ${margin.right}px ${margin.bottom}px ${margin.left}px`,
               background: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
+              color: `#${textHex}`,
             }}
           >
             This is a text

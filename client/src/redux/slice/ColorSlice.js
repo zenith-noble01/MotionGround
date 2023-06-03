@@ -23,13 +23,11 @@ const ColorSlice = createSlice({
             state.color.a = a;
             state.hex = hex;
         },
-        updateHex: (state, action) => {
-            state.hex = action.payload.hex;
-        },
+
     },
 });
 
-export const { setColor, updateHex } = ColorSlice.actions;
+export const { setColor, updateHex, } = ColorSlice.actions;
 
 export default ColorSlice.reducer;
 

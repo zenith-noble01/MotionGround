@@ -22,8 +22,9 @@ import VideoContainer from "./actionPanel/Customization/Background/VideoContaine
 import ColorContainer from "./actionPanel/Customization/Background/ColorContainer"
 import Margin from "./actionPanel/Customization/Margin";
 import Padding from "./actionPanel/Customization/Padding";
+import ColorPiker from "./actionPanel/Customization/ColorPiker";
 
 
 export {
-    Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview, ActionPanel, PreviewHeader, BaseElements, LayoutElements, Mini, LoadingAnnimation, AnimateContainer, CustomizeContainer, ImageContainer, VideoContainer, ColorContainer, Margin, Padding
+    Header, Hero, Features, Templates, Contact, GetStarted, LoginRegisterButton, Loading, ControlPanel, Preview, CodePreview, ActionPanel, PreviewHeader, BaseElements, LayoutElements, Mini, LoadingAnnimation, AnimateContainer, CustomizeContainer, ImageContainer, VideoContainer, ColorContainer, Margin, Padding, ColorPiker
 }

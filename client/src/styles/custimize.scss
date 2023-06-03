@@ -17,6 +17,39 @@
       gap: 0.5rem;
       padding: 0.5rem;
       border-radius: 5px;
+      transition: $trans;
+      overflow: hidden;
+
+      &.open {
+        height: fit-content;
+        gap: 0;
+
+        span {
+          opacity: 0;
+        }
+      }
+
+      .header {
+        color: $p-neutral;
+        @include flexAlign;
+        @include flexBetween;
+
+        &.op {
+          margin-bottom: 0.5rem;
+        }
+
+        .rotate-icon {
+          transition: transform 0.2s linear;
+
+          &.open {
+            transform: rotate(90deg);
+          }
+        }
+
+        &:nth-child(1) {
+          cursor: pointer;
+        }
+      }
 
       .customizer {
         p {
@@ -88,7 +121,7 @@
           .color__preview {
             flex: 1;
             @include flexAlign;
-            gap: 0.5rem;
+            gap: 1rem;
             background: $dark-sm-m;
             padding: 0.3rem;
             border-radius: 5px;

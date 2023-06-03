@@ -1,0 +1,25 @@
+@import "./constants";
+@import "./variables";
+
+.textColor__container {
+  @include flexAlign;
+  gap: 1rem;
+
+  .color__preview {
+    flex: 1;
+    @include flexAlign;
+    gap: 1rem;
+    background: $dark-sm-m;
+    padding: 0.3rem;
+    border-radius: 5px;
+  }
+
+  .color__opacity {
+    flex: 1;
+    @include flexAlign;
+    @include flexBetween;
+    background: $dark-sm-m;
+    padding: 0.3rem;
+    border-radius: 5px;
+  }
+}

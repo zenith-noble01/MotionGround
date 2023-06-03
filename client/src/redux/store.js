@@ -4,6 +4,7 @@ import headerName from "./slice/headerName";
 import customizeSlice from "./slice/customizeSlice";
 import ActionPanelToogleSlice from "./slice/ActionPanelToogleSlice";
 import ColorSlice from "./slice/ColorSlice";
+import TextColorSlice from "./slice/TextColorSlice";
 
 export const store = configureStore({
     reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
         headerName: headerName,
         customize: customizeSlice,
         actionPanel: ActionPanelToogleSlice,
-        bgColor: ColorSlice
+        bgColor: ColorSlice,
+        textColor: TextColorSlice
     },
 });
